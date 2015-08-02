@@ -1,0 +1,4 @@
+D:\CareFit\Workspace\CareFit\CareFit.Notification\bin\Release\CareFit.Notification.dll
+D:\CareFit\Workspace\CareFit\CareFit.Notification\bin\Release\CareFit.Notification.pdb
+D:\CareFit\Workspace\CareFit\CareFit.Notification\obj\Release\CareFit.Notification.dll
+D:\CareFit\Workspace\CareFit\CareFit.Notification\obj\Release\CareFit.Notification.pdb

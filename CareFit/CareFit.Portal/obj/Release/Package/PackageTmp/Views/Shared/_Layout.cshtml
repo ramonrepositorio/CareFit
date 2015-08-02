@@ -1,0 +1,367 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>@ViewBag.Title</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="description" content="">
+    <meta name="keywords" content="admin, academia,sistema musculação, carefit, fitness, sistema academia">
+    <meta name="author" content="">
+
+    <!-- BOOTSTRAP -->
+
+    <link href="~/Content/Laceng/assets/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- LANCENG CSS -->
+    <link href="~/Content/Laceng/assets/css/style.css" rel="stylesheet">
+    <link href="~/Content/Laceng/assets/css/style-responsive.css" rel="stylesheet">
+
+    <!-- VENDOR -->
+    <link href="~/Content/Laceng/assets/css/animate.css" rel="stylesheet">
+    <link href="~/Content/Laceng/assets/third/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    @*<link href="~/Content/Laceng/assets/third/weather-icon/css/weather-icons.min.css" rel="stylesheet">*@
+    <link href="~/Content/Laceng/assets/third/morris/morris.css" rel="stylesheet">
+    <link href="~/Content/Laceng/assets/third/nifty-modal/css/component.css" rel="stylesheet">
+    <link href="~/Content/Laceng/assets/third/sortable/sortable-theme-bootstrap.css" rel="stylesheet">
+    <link href="~/Content/Laceng/assets/third/icheck/skins/minimal/grey.css" rel="stylesheet">
+    <link href="~/Content/Laceng/assets/third/select/bootstrap-select.min.css" rel="stylesheet">
+    <link href="~/Content/Laceng/assets/third/summernote/summernote.css" rel="stylesheet">
+    <link href="~/Content/Laceng/assets/third/magnific-popup/magnific-popup.css" rel="stylesheet">
+    <link href="~/Content/Laceng/assets/third/datepicker/css/datepicker.css" rel="stylesheet">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+	<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+	<script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
+	<![endif]-->
+
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="/Content/Laceng/assets/img/favicon.ico">
+    <script src="/Content/js/jquery/jquery-2.1.0.min.js"></script>
+</head>
+
+
+
+<!-- BODY -->
+<body class="tooltips">
+
+    @*<script src="/Content/Laceng/assets/js/jquery.js"></script>*@
+    <!-- LOADING ANIMATION -->
+    <div id="loading">
+        <div class="loading-inner">
+            <div class="spinner">
+                <div class="cube1"></div>
+                <div class="cube2"></div>
+            </div>
+        </div>
+    </div>
+    <!-- END LOADING ANIMATION -->
+    <!-- BEGIN PAGE -->
+    <div class="container">
+
+        <!-- Your logo goes here -->
+        <div class="logo-brand header sidebar rows">
+            <div class="logo">
+                <h1><a href="/">
+
+                    <img src="/Content/Laceng/assets/img/logo.png" alt="Logo">
+                    CareFit</a></h1>
+            </div>
+        </div>
+        <!-- End div .header .sidebar .rows -->
+
+        <!-- BEGIN SIDEBAR -->
+        <div class="left side-menu">
+
+
+            <div class="body rows scroll-y">
+
+                <!-- Scrolling sidebar -->
+                <div class="sidebar-inner slimscroller">
+
+                    <!-- User Session -->
+                    <div class="media">
+                        <a href="javascript:OpenContent('Home', 'Index', null);">
+                            <img class="img-responsive media-object img-circle" src="/Uploads/Images/no-image.png" id="people-avatar-image" alt="Avatar" style="width: 80%">
+                        </a>
+                        <div class="media-body">
+                            Bem Vindo,
+							<h4 class="media-heading"><strong id="user-name-panel"></strong></h4>
+                            <a href="javascript:EditProfile()">Editar</a>
+                            <a class="md-trigger" data-modal="logout-modal-alt">Sair</a>
+                        </div>
+                        <!-- End div .media-body -->
+                    </div>
+                    <!-- End div .media -->
+
+
+
+
+                    <!-- Sidebar menu -->
+                    <div id="sidebar-menu">
+                        <ul>
+                            @{Html.RenderAction("GetAutorizedMenu", "Menu");}
+                        </ul>
+                        <div class="clear"></div>
+                    </div>
+                    <!-- End div #sidebar-menu -->
+                </div>
+                <!-- End div .sidebar-inner .slimscroller -->
+            </div>
+            <!-- End div .body .rows .scroll-y -->
+
+
+            <!-- End div .footer .rows -->
+        </div>
+        <!-- END SIDEBAR -->
+
+
+
+        <!-- BEGIN CONTENT -->
+        <div class="right content-page">
+
+            <!-- BEGIN CONTENT HEADER -->
+            <div class="header content rows-content-header">
+
+                <!-- Button mobile view to collapse sidebar menu -->
+                <button class="button-menu-mobile show-sidebar">
+                    <i class="fa fa-bars"></i>
+                </button>
+
+                <!-- BEGIN NAVBAR CONTENT-->
+                <div class="navbar navbar-default" role="navigation">
+                    <div class="container">
+                        <!-- Navbar header -->
+                        <div class="navbar-header">
+                            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                                <i class="fa fa-angle-double-down"></i>
+                            </button>
+                        </div>
+                        <!-- End div .navbar-header -->
+
+                        <!-- Navbar collapse -->
+                        <div class="navbar-collapse collapse">
+
+                            <!-- Left navbar -->
+                            @*  <ul class="nav navbar-nav">
+                                <li>
+                                    <a href="#fakelink">
+                                        <i class="fa fa-cog"></i>
+                                    </a>
+                                </li>
+
+                                
+  
+                            </ul>*@
+
+                            <!-- Right navbar -->
+                            <ul class="nav navbar-nav navbar-right top-navbar">
+
+                                <!-- Dropdown notifications -->
+                                <li class="dropdown">
+                                    <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-bell"></i><span class="label label-danger absolute" id="notification-number">0</span></a>
+                                    <ul class="dropdown-menu dropdown-message animated half flipInX" id="notification-list">
+                                        <!-- Dropdown notification header -->
+                                        <li class="dropdown-header notif-header">Notificações</li>
+                                        <li class="divider"></li>
+
+                                        <!-- Dropdown notification footer -->
+                                        <li class="dropdown-footer"><a href="javascript:RefreshRequestPanel();"><i class="fa fa-refresh"></i>Atualizar</a></li>
+                                    </ul>
+                                </li>
+                                <!-- End Dropdown notifications -->
+                               <li class="dropdown">
+                                    <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown"><i class="fa fa-envelope"></i><span class="label label-danger absolute" id="new-messages-alert">0</span></a>
+                                    <ul class="dropdown-menu dropdown-message animated half flipInX" id="new-messages-list">
+                                        <!-- Dropdown Messages header -->
+                                        <li class="dropdown-header notif-header">Mensagens</li>
+                                        <!-- Dropdown messages body -->
+                                        <li class="divider"></li>                                     
+                                        <!-- Dropdown messages footer -->
+                                        <li class="dropdown-footer"><a href="javascript:OpenContent('Chat', 'Index', null);"><i class="fa fa-share"></i>Abrir Central de Mensagens</a></li>
+                                    </ul>
+                                </li>
+
+                                <!-- Dropdown User session -->
+                                <li class="dropdown">
+                                    <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown">Bem Vindo(a), <strong id="user-name-side"></strong>&nbsp;<i class="fa fa-chevron-down i-xs"></i></a>
+                                    <ul class="dropdown-menu animated half flipInX">
+                                        <li><a href="javascript:EditProfile()">Meu Perfil</a></li>
+                                        <li><a href="#" id="change-passwoed-button">Trocar Senha</a></li>
+                                        <li class="divider"></li>
+                                        <li class="dropdown-header">Outras Ações</li>
+                                        <li><a href="javascript:SearchFriends()" class="md-trigger" data-modal="add-friend-alt">Procurar Amigos</a></li>
+                                        <li><a class="md-trigger" data-modal="logout-modal-alt">Sair</a></li>
+                                    </ul>
+                                </li>
+                                <!-- End Dropdown User session -->
+                            </ul>
+                        </div>
+                        <!-- End div .navbar-collapse -->
+                    </div>
+                    <!-- End div .container -->
+                </div>
+                <!-- END NAVBAR CONTENT-->
+            </div>
+            <!-- END CONTENT HEADER -->
+
+
+
+
+            <!-- ============================================================== -->
+            <!-- START YOUR CONTENT HERE -->
+            <!-- ============================================================== -->
+            <div class="body content rows scroll-y">
+                <div id="page-wrapper">
+                    @RenderBody()
+                </div>
+
+                <!-- Footer -->
+                <footer>
+                    &copy; 2014 <a href="index.html">CareFit</a>. Desenvolvido por <a href="http://www.freesource.com.br" target="_blank">FreeSource</a> desde 2014
+                </footer>
+                <!-- End Footer -->
+
+            </div>
+            <!-- ============================================================== -->
+            <!-- END YOUR CONTENT HERE -->
+            <!-- ============================================================== -->
+
+
+        </div>
+        <!-- END CONTENT -->
+        <!--
+		============================================================================
+		MODAL DIALOG EXAMPLE
+		You can change transition style, just view element page
+		============================================================================
+		-->
+        <!-- Modal Logout Primary -->
+        <div class="md-modal md-fall" id="logout-modal">
+            <div class="md-content">
+                <h3><strong>Logout</strong> Confirmation</h3>
+                <div>
+                    <p class="text-center">Are you sure want to logout from this awesome system?</p>
+                    <p class="text-center">
+                        <button class="btn btn-danger md-close">Nope!</button>
+                        <a href="login.html" class="btn btn-success md-close">Yeah, I'm sure</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- End .md-modal -->
+
+        <!-- Modal Logout Alternatif -->
+        <div class="md-modal md-just-me" id="logout-modal-alt">
+            <div class="md-content">
+                <h3><strong>Sair</strong> Confirmação</h3>
+                <div>
+                    <p class="text-center">Você tem certeza que deseja sair do CareFit?</p>
+                    <p class="text-center">
+                        <button class="btn btn-danger md-close">Não</button>
+                        <a href="/Authentication/" class="btn btn-success md-close">Tenho</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- End .md-modal -->
+
+
+        <div class="md-modal md-3d-slit" id="add-friend-alt">
+            <div class="md-content">
+                <h3>Procurar Amigos
+                    <button class="btn btn-default pull-right md-close"><i class="fa fa-times"></i></button>
+                </h3>
+                <div class="row" id="add-friend-content">
+                </div>
+            </div>
+        </div>
+
+
+        <!--
+		MODAL OVERLAY
+		Always place this div at the end of the page content
+		-->
+        <div class="md-overlay"></div>
+
+
+
+    </div>
+    @*Variaveis de sistema*@
+    <input type="hidden" id="session-id" value="@Session.SessionID" />
+
+
+
+    <!-- End div .container -->
+    <!-- END PAGE -->
+
+    <!--
+	================================================
+	JAVASCRIPT
+	================================================
+	-->
+    <!-- Basic Javascripts (Jquery and bootstrap) -->
+
+    @*<script src="~/Content/Laceng/assets/js/bootstrap.min.js"></script>*@
+    <script src="~/Content/bootstrap-3.1.1-dist/js/bootstrap.min.js"></script>
+    @*<script src="~/Content/bootstrap%202.3.2/js/bootstrap.min.js"></script>*@
+    <!-- VENDOR -->
+
+    <!-- Slimscroll js -->
+    <script src="~/Content/Laceng/assets/third/slimscroll/jquery.slimscroll.min.js"></script>
+
+    <!-- Morris js -->
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/raphael/2.1.0/raphael-min.js"></script>
+    <script src="~/Content/Laceng/assets/third/morris/morris.js"></script>
+
+    <!-- Nifty modals js -->
+    <script src="~/Content/Laceng/assets/third/nifty-modal/js/classie.js"></script>
+    <script src="~/Content/Laceng/assets/third/nifty-modal/js/modalEffects.js"></script>
+
+    <!-- Sortable js -->
+    <script src="~/Content/Laceng/assets/third/sortable/sortable.min.js"></script>
+
+    <!-- Bootstrao selectpicker js -->
+    <script src="~/Content/Laceng/assets/third/select/bootstrap-select.min.js"></script>
+
+    <!-- Summernote js -->
+    <script src="~/Content/Laceng/assets/third/summernote/summernote.js"></script>
+
+    <!-- Magnific popup js -->
+    <script src="~/Content/Laceng/assets/third/magnific-popup/jquery.magnific-popup.min.js"></script>
+
+    <!-- Bootstrap file input js -->
+    <script src="~/Content/Laceng/assets/third/input/bootstrap.file-input.js"></script>
+
+    <!-- Bootstrao datepicker js -->
+    <script src="~/Content/Laceng/assets/third/datepicker/js/bootstrap-datepicker.js"></script>
+
+    <!-- Icheck js -->
+    <script src="~/Content/Laceng/assets/third/icheck/icheck.min.js"></script>
+
+
+    <!-- Bootstrap TypeAhead -->
+    <script src="~/Content/Componentes/TypeAhead/bootstrap-typeahead.min.js"></script>
+
+    <!-- Form wizard js -->
+    @*<script src="~/Content/Laceng/assets/third/wizard/jquery.snippet.min.js"></script>*@
+    <script src="~/Content/Laceng/assets/third/wizard/jquery.easyWizard.js"></script>
+    <script src="~/Content/Laceng/assets/third/wizard/scripts.js"></script>
+
+    <!-- LANCENG TEMPLATE JAVASCRIPT -->
+    <script src="~/Content/Laceng/assets/js/lanceng.js"></script>
+    <!-- BOOTBOX JAVASCRIPT -->
+    <script src="~/Content/Bootbox/bootbox.js"></script>
+
+    <script src="~/Content/js/Global/Utils.js"></script>
+    <script src="~/Content/js/Shared/_Layout.js"></script>
+
+    @*    <script src="~/Content/sb-admin2/js/plugins/dataTables/jquery.dataTables.js"></script>
+    <script src="~/Content/sb-admin2/js/plugins/dataTables/dataTables.bootstrap.js"></script>
+    <script src="~/Content/sb-admin2/js/plugins/metisMenu/jquery.metisMenu.js"></script>*@
+
+
+</body>
+</html>

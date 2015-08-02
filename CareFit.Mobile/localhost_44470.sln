@@ -1,0 +1,52 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "CareFit.Mobile", "http://localhost:44470", "{5738F825-A868-4944-B187-8BA3E6A546DF}"
+	ProjectSection(WebsiteProperties) = preProject
+		SccProjectName = "SAK"
+		SccAuxPath = "SAK"
+		SccLocalPath = "SAK"
+		SccProvider = "SAK"
+		UseIISExpress = "true"
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.5"
+		Debug.AspNetCompiler.VirtualPath = "/localhost_44470"
+		Debug.AspNetCompiler.PhysicalPath = "..\CareFit.Mobile\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_44470\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/localhost_44470"
+		Release.AspNetCompiler.PhysicalPath = "..\CareFit.Mobile\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\localhost_44470\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		SlnRelativePath = "..\CareFit.Mobile\"
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 1
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://freesource.com.br:8080/tfs/carefit
+		SccWebProject0 = true
+		SccProjectUniqueName0 = http://localhost:44470
+		SccProjectName0 = .
+		SccAuxPath0 = http://freesource.com.br:8080/tfs/carefit
+		SccLocalPath0 = .
+		SccProvider0 = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccProjectEnlistmentChoice0 = 2
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{5738F825-A868-4944-B187-8BA3E6A546DF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5738F825-A868-4944-B187-8BA3E6A546DF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

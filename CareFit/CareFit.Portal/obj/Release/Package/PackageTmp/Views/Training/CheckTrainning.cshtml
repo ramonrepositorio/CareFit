@@ -1,0 +1,63 @@
+﻿@model CareFit.Portal.Models.Trainig.CheckTrainningVM
+
+<script src="~/Content/js/Trainig/checkTrainning.js"></script>
+<input type ="hidden" id="people-trainning-value-id" value="@Model.PeopleTrainning.ID" />
+<input type="hidden" id="header-check-trainning" value="@Model.Trainning.Titulo" />
+@if (Model.LastTrainnigDone != null)
+{
+    <h4>A ultima Marcação desse treino foi dia <small>@Model.LastTrainnigDone.Marcacao.ToString("dd/MM/yyyy") as @Model.LastTrainnigDone.Marcacao.ToString("HH:mm")</small> </h4>    
+}
+else
+{
+    Model.LastTrainnigDone = new CareFit.Domain.Repository.PessoaTreinoEfetuado { Marcacao = DateTime.Now.AddYears(-1) };
+    <h4>Parabéns</h4>
+    <h4><small>Esse é seu primeiro treino! Logo logo estaremos comparando resultados. Bom Treino </small></h4>    
+}
+
+
+@if (Model.LastTrainnigDone.Marcacao > DateTime.Now.AddHours(Model.Trainning.RepousoMinimo * -1))
+{
+    if (Model.LastTrainnigDone.Marcacao.Date == DateTime.Now.Date)
+    {
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>Atenção!</strong> Esse treino já foi marcado hoje, E não pode ser marcado novamente no mesmo dia !
+    </div>
+    }
+    else
+    {
+    <div class="alert alert-info alert-dismissable" id="alert-confirm-trainning">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>Força!</strong> falta pouco.. Confirme seu treino e faça hoje a diferença.
+    </div>
+        
+    <div class="alert alert-danger alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>Atenção!</strong> A ultima marcação desse treino foi no dia @Model.LastTrainnigDone.Marcacao.ToString("dd/MM/yyyy") as @Model.LastTrainnigDone.Marcacao.ToString("HH:mm") e deveria ter <b>@Model.Trainning.RepousoMinimo horas </b>de repouso!
+    </div>
+    
+    
+    }
+}
+else
+{
+    <div class="alert alert-info alert-dismissable" id="alert-confirm-trainning">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <strong>Força!</strong> falta pouco.. Confirme seu treino e faça hoje a diferença.
+    </div>
+}
+
+<div class="alert alert-info alert-dismissable" id="alert-confirm-success" style="display: none">
+    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+    <strong>Parabens!</strong> Otimo Treino, Essa é a atitude que alcança objetivos!
+</div>
+
+<p>
+    @if (Model.LastTrainnigDone.Marcacao.Date < DateTime.Now.Date)
+    {   
+        
+@*<button type="button" class="btn btn-default btn-lg" id="cancel-trainning-button">Sair, Não vou treinar</button>*@
+        <label></label>
+        <button type="button" class="btn btn-success btn-lg pull-right" id="confirm-trainning">Vou Treinnar</button>
+    }
+</p>

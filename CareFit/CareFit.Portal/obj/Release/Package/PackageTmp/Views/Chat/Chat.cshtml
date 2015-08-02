@@ -1,0 +1,40 @@
+﻿@model CareFit.Portal.Models.Chat.ChatVM
+<script src="~/Content/js/Chat/chat.js"></script>
+
+<div class="col-md-10">
+
+    <div class="chat-widget" >
+        <ul class="media-list">
+            @foreach (var Message in Model.Messages)
+            {
+                var bodyMessageClass = "";
+                var pictureUrl = Model.ImagePeople.Url;
+                var pullPosition = "right";
+                if (Message.PessoaRemetenteId == Model.PeopleFromId)
+                {
+                    bodyMessageClass = "info";
+                    pictureUrl = Model.ImagePeopleFrom.Url;
+                    pullPosition = "left";
+                }
+                <li class="media">
+                    @*<a class="pull-@pullPosition" href="#fakelink">*@
+                        <img class="media-object img-circle pull-@pullPosition" src="@pictureUrl" alt="Avatar">
+                    @*</a>*@
+                    <div class="media-body @bodyMessageClass">
+                        @Message.Mensagem
+                        <p class="time">@Message.DataEnvio.ToString("dd/MM/yyyy HH:mm:ss")</p>
+                    </div>
+                </li>
+                    
+            }
+        </ul>
+    </div>
+    <!-- End div .chat-widget -->
+    <!-- Form chat -->
+    <form role="form" class="input-chat" action="javascript:postMessage(@Model.PeopleFromId)" id="chat-form-send-message-@Model.PeopleFromId" friend-id="@Model.PeopleFromId">
+        <input type="text" class="form-control input-lg" id="chat-message-@Model.PeopleFromId" placeholder="Digite aqui a mensagem e tecle Enter para enviar...">
+    </form>
+    <!-- End form chat -->
+</div>
+
+

@@ -1,0 +1,65 @@
+﻿@model CareFit.Portal.Models.Trainig.GetDefaultTrainningsVM
+
+<script src="~/Content/js/Trainig/getDefaultTrainnings.js"></script>
+
+<div class="page-heading animated fadeInDownBig">
+    <h1>CareFit <small>Treinos Padrões</small></h1>
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Filtros para a busca de treinos Padrões
+            </div>
+            <div class="panel-body">
+                <input type="hidden" id="default-trainning-people-id" value="@Model.PeopleId" />
+                <form class="form-inline" role="form">
+                    @if (Model.Professors != null)
+                    {
+                        <div class="form-group ">
+                            <select class="form-control " id="professor-default-trainnings">
+                                <option value="-1">Professores</option>
+                                @foreach (var professor in Model.Professors)
+                                {
+                                    <option value="@professor.ID">@professor.Nome @professor.Sobrenome</option>
+                                }
+                            </select>
+                        </div>
+                    }
+                    @if (Model.Customers != null)
+                    {
+                        <div class="form-group ">
+                            <select class="form-control " id="customer-default-trainnings">
+                                <option value="-1">Academias</option>
+                                @foreach (var customer in Model.Customers)
+                                {
+                                    <option value="@customer.ID">@customer.Nome</option>
+                                }
+                            </select>
+                        </div>
+                    }
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Buscar treinos padrões utilizando os filtros selecionados" id="serch-default-trainning">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cadastrar novo treinos padrões" id="add-default-trainning">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" style="display: none" id="panel-default-trainning-list">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Resultado da busca de pessoas
+            </div>
+            <div class="panel-body" id="default-trainning-list">
+            </div>
+        </div>
+    </div>
+</div>

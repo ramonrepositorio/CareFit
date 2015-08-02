@@ -1,0 +1,10 @@
+﻿@model CareFit.Portal.Models.Menu.GetAutorizedMenuVM
+
+@if (Model != null)
+{
+    if (Model.Menus != null)
+    {        
+    @Html.Raw(Model.MakeMenu()) 
+    }
+
+}

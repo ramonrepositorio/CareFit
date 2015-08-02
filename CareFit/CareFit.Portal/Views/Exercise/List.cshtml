@@ -1,0 +1,34 @@
+﻿@model CareFit.Portal.Models.Exercise.ListVM
+
+<script src="~/Content/js/Exercise/list.js"></script>
+
+<div class="table-responsive">
+    <table data-sortable="" class="table" data-sortable-initialized="true" id="exercises-table">
+        <thead>
+            <tr>
+                <th data-sorted="true">Nome</th>
+                <th data-sorted="true">Tipo</th>                
+                <th data-sorted="true">Grupo Muscular</th>
+                <th data-sorted="true">Ativo</th>
+                <th data-sorted="false">&nbsp;</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var exercises in Model.Exercises)
+            {
+                <tr>
+                    <td>@exercises.Nome</td>
+                    <td>@Model.GetExerciseTypeDescription(exercises.ExercicioTipoId)</td>
+                    <td>@Model.GetMuscleGroupDescription(exercises.GrupoMuscularId)</td>
+                    <td>@(exercises.Ativo ? "Sim" : "Não")</td>
+                    <td>
+                        <button type="button" class="btn btn-default"  exercise-id="@exercises.ID" title="Entrar no cadastro do @exercises.Nome" id="edit-exercise-button-@exercises.ID">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

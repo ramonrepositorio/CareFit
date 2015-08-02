@@ -1,0 +1,63 @@
+﻿@model CareFit.Portal.Models.Post.TimelineVM
+
+<script src="~/Content/js/Post/timeline.js"></script>
+
+<div class="box-info">
+    <h2><i class="fa fa-plus"></i>&nbsp;<strong>Novo</strong> Post</h2>
+    <div class="additional-btn">
+        <a class="additional-icon" href="javascript:OpenContent('Home', 'Index', null);"><i class="fa fa-refresh"></i></a>
+        <a class="additional-icon " href="#" data-toggle="collapse" data-target="#quick-post"><i class="fa fa-chevron-down"></i></a>
+    </div>
+    <div id="quick-post" class="collapse" style="height: 0px;">
+        <div role="form">
+            <div class="form-group">
+                <textarea class="form-control" style="height: 140px;" id="add-new-post-text"></textarea>
+            </div>
+            <div class="row pull-right">
+                <div class="col-md-12">
+                    <button type="reset" class="btn btn-sm btn-danger">Cancelar</button>
+                    <button id="add-new-post" class="btn btn-sm btn-success">Postar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- End div #quick-post -->
+</div>
+<h4>Timeline</h4>
+
+@if (Model.Posts != null && Model.Posts.Count > 0)
+{
+    <div class="the-timeline">
+        <ul>
+            @foreach (var post in Model.Posts.OrderByDescending(p => p.DataPost).ToList())
+            {
+                string month = new System.Globalization.CultureInfo("pt-BR").DateTimeFormat.MonthNames[post.DataPost.Month - 1].ToString();
+                month = month.First().ToString().ToUpper() + String.Join("", month.Skip(1));
+                <li>
+                    <img src="@post.Pessoas.Imagens.Url" class="xs-avatar ava-dropdown" />
+                    <div class="the-date">
+                        <span>@post.DataPost.Day</span>
+                        <small>@month.Substring(0, 3)</small>
+                    </div>
+                    <h4>@post.PessoaPostTipos.Description <small>@post.DataPost.ToString("HH:mm")</small></h4>
+                    <p>
+                        @post.Post
+                    </p>
+                    <p>
+                        <small class="pull-right">@post.Pessoas.Nome @post.Pessoas.Sobrenome</small>
+                    </p>
+                </li>
+            }
+        </ul>
+    </div>
+}
+else
+{ 
+    <div class="alert alert-warning alert-dismissable">
+        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+        <p><strong>Atenção!</strong> Não Existe nenhum post em sua Timeline!</p>
+    </div>
+}
+
+
+

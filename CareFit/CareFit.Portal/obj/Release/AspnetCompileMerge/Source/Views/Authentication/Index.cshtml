@@ -1,0 +1,95 @@
+﻿@model CareFit.Portal.Models.Authentication.IndexVM
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAuthentication.cshtml";
+}
+
+
+<script src="~/Content/js/Authentication/index.js"></script>
+
+@*
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4">
+            <div class="login-panel panel panel-default">
+                <div class="panel-heading">
+                    <h3 class="panel-title">Entrar no sistema CareFit</h3>
+                </div>
+                <div class="panel-body">
+                    <form method="POST" action="@Url.Action("Autorize", "Authentication")">
+                        <fieldset>
+                            <div class="form-group">
+                                <input class="form-control" value="@Model.UserMail" placeholder="E-mail" name="mail" type="email" autofocus="">
+                            </div>
+                            <div class="form-group">
+                                <input class="form-control" placeholder="Senha" name="pass" type="password" value="">
+                            </div>
+                            <div class="checkbox">
+                                <label>
+                                    <input name="remember" type="checkbox" value="">Esqueci minha senha
+                                </label>
+                            </div>
+                            <!-- Change this to a button or input when using this as a form -->
+                            <input type="submit" class="btn btn-lg btn-success btn-block" value="Entrar" />
+                            @if (!string.IsNullOrEmpty(Model.Error))
+                            {                
+                                <div class="alert alert-danger alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                                    <strong>Atenção!</strong> @Model.Error
+                                </div>
+                            }
+                        </fieldset>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>*@
+<!-- Begin Login Page -->
+<div class="full-content-center animated fadeInDownBig">
+    <a href="#fakelink">
+        <img src="/Content/Laceng/assets/img/logo.png" class="logo-login img-circle" alt="Logo"></a>
+    <div class="login-wrap">
+        <div class="box-info">
+            <h2 class="text-center"><strong>CareFit</strong> Login</h2>
+            <form method="POST" role="form" action="@Url.Action("Autorize", "Authentication")">
+                <div class="form-group login-input">
+                    <i class="fa fa-sign-in overlay"></i>
+                    <input  class="form-control text-input" value="@(string.IsNullOrEmpty(Model.UserMail)?"":"")" placeholder="E-mail" name="mail" type="email">
+                </div>
+                <div class="form-group login-input">
+                    <i class="fa fa-key overlay"></i>
+                    <input type="password" class="form-control text-input" placeholder="Senha" name="pass" value="">
+                </div>
+
+
+                <div class="row">
+                    <div class="col-sm-6">
+                        <button type="submit" class="btn btn-success btn-block"><i class="fa fa-unlock"></i>Entrar</button>
+                    </div>
+                    <div class="col-sm-6">
+                        <a href="register.html" class="btn btn-default btn-block"><i class="fa fa-rocket"></i>Cadastrar-se</a>
+                    </div>
+                </div>
+
+            </form>
+
+            <p class="text-center"><strong>- or -</strong></p>
+
+            <button type="button" class="btn btn-primary btn-block btn-facebook"><i class="fa fa-facebook"></i>Logar atraves do Facebook</button>
+            <button type="button" class="btn btn-primary btn-block btn-twitter"><i class="fa fa-twitter"></i>Logar atraves do Twitter </button>
+
+        </div>
+        <p class="text-center"><a href="forgot-password.html"><i class="fa fa-lock"></i>Esqueceu sua senha?</a></p>
+        @if (!string.IsNullOrEmpty(Model.Error))
+        {                
+            <div class="alert alert-danger alert-dismissable">
+                <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                <strong>Atenção!</strong> @Model.Error
+            </div>
+        }
+    </div>
+</div>
+<!-- End Login Page -->

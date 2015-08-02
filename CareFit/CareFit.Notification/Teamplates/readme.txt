@@ -1,0 +1,1 @@
+﻿Esta pasta conterá os arquivos html que deverão ter a propriedade Build Action como Embedded Resource marcada.

@@ -1,0 +1,65 @@
+﻿@model CareFit.Portal.Models.Trainig.ViewTrainningVM
+<div class="page-heading animated fadeInDownBig">
+    <h1>Consulta <small>de treino</small></h1>
+</div>
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Filtros para a busca de pessoas
+            </div>
+            <div class="panel-body">
+                <div class="row">
+                    <div class="col-md-1">Nome</div>
+                    <div class="col-md-5">@Model.People.Nome @Model.People.Sobrenome</div>
+                    <div class="col-md-1">Academia</div>
+                    <div class="col-md-5">@Model.People.PessoaEmpresas.FirstOrDefault().Empresas.Nome</div>
+
+                    <div class="col-md-1">Treino</div>
+                    <div class="col-md-3">@Model.Trainning.Titulo</div>
+                    <div class="col-md-1">Descrição</div>
+                    <div class="col-md-7">@Model.Trainning.Descricao</div>
+
+                    <div class="col-md-1">Repetições</div>
+                    <div class="col-md-1">@Model.Trainning.Repeticoes</div>
+                    <div class="col-md-1">Repouso</div>
+                    <div class="col-md-1">@Model.Trainning.RepousoMinimo [hrs]</div>
+
+
+                </div>
+                <div class="row">
+                    <div class="col-md-8">.col-md-8</div>
+                    <div class="col-md-4">.col-md-4</div>
+                </div>
+                @if (Model.Trainning.TreinoExercicios != null)
+                {                                    
+                    <div class="row">
+                        <div class="col-md-2">Exercicio</div>
+                        <div class="col-md-2">Maquina</div>
+                        <div class="col-md-2">Acessorios</div>
+                        <div class="col-md-3">Exercicio Descricao</div>
+                        <div class="col-md-1">Repetição</div>
+                        <div class="col-md-1">Carga</div>
+                        <div class="col-md-1">Descanso</div>
+                        @foreach (var exercises in Model.Trainning.TreinoExercicios)
+                        {
+                            <div class="col-md-2">Exercicio</div>
+                            <div class="col-md-2">Maquina</div>
+                            <div class="col-md-2">Acessorios</div>        
+                            <div class="col-md-3">Exercicio Descricao</div>    
+                            <div class="col-md-1">@exercises.Repeticoes</div>
+                            <div class="col-md-1">@exercises.Carga</div>    
+                            <div class="col-md-1">@exercises.Descanso</div>    
+                        }
+
+                    </div>
+                }
+                <div class="row">
+                    <div class="col-md-1">Data</div>
+                    <div class="col-md-">@DateTime.Now.ToString("dd/MM/yyyy hh:mm:ss")</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

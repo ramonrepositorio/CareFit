@@ -1,0 +1,175 @@
+﻿@model CareFit.Portal.Models.People.EditVM
+<script src="~/Content/js/jquery/jquery.mask.js"></script>
+<script src="~/Content/js/People/edit.js"></script>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">@(Model.People.ID == 0 ? "Novo Utilizador" : Model.People.Nome + " " + Model.People.Sobrenome)</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Dados Cadastro 
+            </div>
+            <form role="form" id="edit-people-form" action="javascript:SavePeople();">
+
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <div class="col-lg-10">
+                            <input type="hidden" name="ID" id="peopleId" value="@Model.People.ID"  />
+                            <div class="form-group col-lg-12">
+                                <label class="control-label" for="peopleMail">Email</label>
+                                <input type="email" class="form-control"  id="peopleMail" value="@Model.People.Email" placeholder="Digite o Email" maxlength="200" @(string.IsNullOrEmpty(Model.People.Email) ? "" : "disabled")>
+                                <input type="hidden" name="Email" value="@Model.People.Email" />
+                            </div>
+                            <div class="form-group col-lg-3 ">
+                                <label class="control-label" for="peopleName">Nome</label>
+                                <input type="text" class="form-control" id="peopleName" name="Nome" value="@Model.People.Nome" placeholder="Digite o Nome" maxlength="100">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label class="control-label" for="peopleLastName">Sobrenome</label>
+                                <input type="text" class="form-control" id="peopleLastName" name="Sobrenome" value="@Model.People.Sobrenome" placeholder="Digite o Sobrenome" maxlength="100">
+                            </div>
+
+                            <div class="form-group col-lg-3">
+                                <label class="control-label" for="peopleCpf">CPF</label>
+                                <input type="text" class="form-control" id="peopleCpf" name="Cpf" value="@Model.People.Cpf" placeholder="Digite o CPF">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label class="control-label" for="peopleRg">RG</label>
+                                <input type="text" class="form-control" id="peopleRg" name="RG" value="@Model.People.RG" placeholder="Digite o RG">
+                            </div>
+
+                            <div class="form-group col-lg-3">
+                                <label class="control-label" for="peopleBirthday">Data de Nascimento</label>
+                                <input type="text" class="form-control" id="peopleBirthday" name="Nascimento" value="@(Model.People.Nascimento != DateTime.MinValue ? @Model.People.Nascimento.ToString("dd/MM/yyyy") : "")" placeholder="Digite a data de Nascimento [DD/MM/YYYY]">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label class="control-label" for="peoplePhone">Telefone</label>
+                                <input type="text" class="form-control" id="peoplePhone" name="Telefone" value="@Model.People.Telefone" placeholder="Digite o Telefone [XX XXXX-XXXX]">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label class="control-label" for="peopleCelPhone">Celular</label>
+                                <input type="text" class="form-control" id="peopleCelPhone" name="Celular" value="@Model.People.Celular" placeholder="Digite o Celular  [XX XXXXX-XXXXX]">
+                            </div>
+                            <div class="form-group col-lg-3">
+                                <label class="control-label" for="peopleZipCode">Cep</label>
+                                <input type="text" class="form-control" id="peopleZipCode" name="Cep" value="@Model.People.Cep" placeholder="Digite o Cep">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label class="control-label" for="peopleAddress">Endereço</label>
+                                <input type="text" class="form-control" id="peopleAddress" name="Endereco" value="@Model.People.Endereco" maxlength="300" placeholder="Digite o Endereco">
+                            </div>
+                            <div class="form-group col-lg-2">
+                                <label for="peopleType">UF</label>
+                                <select class="form-control" id="peopleState" name="Estado">
+                                    <option value="-1">Escolha o Estado</option>
+                                    @foreach (var state in Model.States)
+                                    {
+                                        <option value="@state.UF" @(state.UF == Model.People.Estado ? "selected" : "")>@state.Estado</option>
+                                    }
+                                </select>
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label class="control-label" for="peopleAddressCity">Cidade</label>
+                                <input type="text" class="form-control" id="peopleAddressCity" name="Cidade" value="@Model.People.Cidade" maxlength="100" placeholder="Digite a Cidade">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label class="control-label" for="peopleAddressBairro">Bairro</label>
+                                <input type="text" class="form-control" id="peopleAddressBairro" name="Bairro" value="@Model.People.Bairro" maxlength="100" placeholder="Digite o Bairro">
+                            </div>
+                            <div class="form-group col-lg-2">
+                                <label class="control-label" for="peopleAddressNumber">Numero</label>
+                                <input type="text" class="form-control" id="peopleAddressNumber" name="EnderecoNumero" value="@Model.People.EnderecoNumero" maxlength="10" placeholder="Digite o Numero">
+                            </div>
+                            <div class="form-group col-lg-4">
+                                <label class="control-label" for="peopleAddressComplement">Complemento</label>
+                                <input type="text" class="form-control" id="peopleAddressComplement" name="EnderecoComplemento" value="@Model.People.EnderecoComplemento" maxlength="30" placeholder="Digite o Complemento">
+                            </div>
+                        </div>
+
+                        <div class="col-lg-2" style="text-align: center">
+                            <div class="panel panel-success">
+                                <div class="panel-heading">
+                                    FOTO
+                                </div>
+                                <div class="panel-body">
+                                    <img class="media-object img-circle" src="/Uploads/AvatarImgs/no-image.png" alt="Avatar" style="width: 195px">
+                                </div>
+                                <div class="panel-footer">
+                                    <a class="btn btn-default" data-toggle="modal" data-target="#image-dialog" title="Clique aqui para abri o editor de imagem" id="edit-people-image">
+                                        <i class="fa fa-edit"></i>&nbsp;Editar Foto</a>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <hr />
+                    @foreach (var peopleCustomer in Model.PeopleCustomers)
+                    {
+                        <input type="hidden" id="customer-id-@peopleCustomer.ID" value="@peopleCustomer.EmpresaId" />
+                        <div class="col-lg-12 well well-sm" id="people-customer-painel-@peopleCustomer.ID" people-customer-id="@peopleCustomer.ID">
+                            <div class="form-group col-lg-2">
+                                <label>
+                                    <i class="fa fa-home fa-3x"></i>
+                                    @peopleCustomer.Empresas.Nome
+                                </label>
+                            </div>
+                            <div class="form-group col-lg-2">
+                                <label for="peopleType">Tipo</label>
+                                <select class="form-control" id="peopleType-@peopleCustomer.ID" name="PessoaTipoId">
+                                    <option value="-1">Escolha o Tipo</option>
+                                    @foreach (var peopleType in Model.PeopleTypes)
+                                    {
+                                        <option value="@peopleType.ID" @(peopleType.ID == peopleCustomer.PessoaTipoId ? "selected" : "")>@peopleType.Descricao</option>
+                                    }
+                                </select>
+                            </div>
+
+                            <div class="form-group col-lg-1">
+                                <label class="control-label" for="people-Active-@peopleCustomer.ID">Ativo</label>
+                                <input type="checkbox" class="form-control" name="Ativo" id="people-active-@peopleCustomer.ID"  value="true" @(peopleCustomer.Ativo ? "checked" : "")>
+                            </div>
+
+                        </div>
+                    }
+                </div>
+                <input type="hidden" name="PessoaEmpresas" />
+
+                <div class="panel-footer">
+                    <button type="submit" class="btn btn-default" d title="@(Model.People.ID == 0 ? "Clique aqui para cadastrar o utilizador acima" : "Clique aqui para atualizar o cadastro acimo")" 
+                    id="add-new-people">
+                        <i class="fa fa-save"></i>&nbsp;@(Model.People.ID == 0 ? "Cadastrar" : "Atualizar")</button>
+                    <button type="reset" class="btn btn-default" title="Clique aqui para apagar todos os campos do formulario acima"><i class="fa fa-eraser"></i>&nbsp;Limpar Formulario</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+<div class="modal fade" id="image-dialog">
+    <div class="modal-dialog modal-lg">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Editar Foto</h4>
+            </div>
+            <div class="modal-body" id="image-dialog-body">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Sair</button>
+                <button type="button" class="btn btn-primary">Concluir</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->

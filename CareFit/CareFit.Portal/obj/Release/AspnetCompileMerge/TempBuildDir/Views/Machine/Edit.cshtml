@@ -1,0 +1,109 @@
+﻿@model CareFit.Portal.Models.Machine.EditVM
+
+<script src="~/Content/js/Machine/edit.js"></script>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Equipamento @Model.Machine.Nome</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Equipamento
+            </div>
+            <form role="form" id="edit-machine-form" action="javascript:SaveMachine();">
+                <input type="hidden" id="machineId" name="ID" value="@Model.Machine.ID" />
+                <div class="panel-body">
+                    <div class="col-lg-12">
+                        <div class="col-lg-10">
+                            <input type="hidden" name="ID" id="machineId" value="@Model.Machine.ID"  />
+                            <div class="form-group col-lg-4">
+                                <label class="control-label" for="machineName">Nome</label>
+                                <input type="text" class="form-control" name="Nome" id="machineName" value="@Model.Machine.Nome" placeholder="Digite o Nome" maxlength="200">
+                            </div>
+                            <div class="form-group col-lg-2">
+                                <label for="machineType">Tipo</label>
+                                <select class="form-control" id="machineType" name="EquipamentoTipoId">
+                                    <option value="-1">Escolha o Tipo</option>
+                                    @foreach (var machineType in Model.MachineTypes)
+                                    {
+                                        <option value="@machineType.ID" @(machineType.ID == Model.Machine.EquipamentoTipoId ? "selected" : "")>@machineType.Descricao</option>
+                                    }
+                                </select>
+                            </div>
+                            @if (Model.Rooms != null)
+                            {
+                                if (Model.Rooms.Count > 0)
+                                {
+                                <div class="form-group col-lg-2">
+                                    <label for="machineRoom">Sala</label>
+                                    <select class="form-control" id="machineRoom" name="SalaId">
+                                        <option value="-1">Escolha a Sala</option>
+                                        @foreach (var room in Model.Rooms)
+                                        {
+                                            <option value="@room.ID" @(room.ID == Model.Machine.SalaId ? "selected" : "")>@room.Nome</option>
+                                        }
+                                    </select>
+                                </div>    
+                                }
+                            }
+                            @if (Model.Customers.Count == 1)
+                            {
+                                <input type="hidden" name="EmpresaId" value="@Model.Customers.FirstOrDefault().ID" />
+                            }
+                            else
+                            {
+                                <div class="form-group col-lg-2">
+                                    <label for="machineRoom">Empresa</label>
+                                    <select class="form-control" id="machineCustomer" name="EmpresaId">
+                                        <option value="-1">Escolha a Empresa</option>
+                                        @foreach (var customer in Model.Customers)
+                                        {
+                                            <option value="@customer.ID" @(customer.ID == Model.Machine.EmpresaId ? "selected" : "")>@customer.Nome</option>
+                                        }
+                                    </select>
+                                </div>    
+                            }
+
+
+                            <div class="form-group col-lg-1">
+                                <label class="control-label" for="machinePrimary">Maquina</label>
+                                <input type="checkbox" class="form-control" name="Primario" id="machinePrimary" @(Model.Machine.Primario ? "checked" : "") value="true">
+                            </div>
+                            <div class="form-group col-lg-1">
+                                <label class="control-label" for="machineSecondary">Acessório</label>
+                                <input type="checkbox" class="form-control" name="Secundario" id="machineSecondary" @(Model.Machine.Secundario ? "checked" : "") value="true">
+                            </div>
+                            <div class="form-group col-lg-1">
+                                <label class="control-label" for="machineActive">Ativo</label>
+                                <input type="checkbox" class="form-control" name="Ativo" id="machineActive" @(Model.Machine.Ativo ? "checked" : "") value="true">
+                            </div>
+                            <div class="form-group col-lg-2">
+                                <label class="control-label" for="machineIdentification">Identificação</label>
+                                <input type="text" class="form-control" name="Identificacao" id="machineIdentification" value="@Model.Machine.Identificacao" placeholder="Digite a identificacao" maxlength="50">
+                            </div>
+                            <div class="form-group col-lg-6">
+                                <label class="control-label" for="machineDescription">Descrição</label>
+                                <textarea id="machineDescription" class="form-control" name="Descricao">@Model.Machine.Descricao</textarea>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="@(Model.Machine.ID == 0 ? "Clique aqui para cadastrar o equipamento acima" : "Clique aqui para atualizar o equipamento acima")" 
+                    id="add-new-people">
+                        <i class="fa fa-save"></i>&nbsp;@(Model.Machine.ID == 0 ? "Cadastrar" : "Atualizar")</button>
+                    <button type="reset" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Clique aqui para apagar todos os campos do formulario acima"><i class="fa fa-eraser"></i>&nbsp;Limpar Formulario</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+

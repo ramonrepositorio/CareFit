@@ -1,0 +1,10 @@
+D:\CareFit\Workspace\CareFit\CareFit.Notification\bin\Debug\CareFit.Notification.dll
+D:\CareFit\Workspace\CareFit\CareFit.Notification\bin\Debug\CareFit.Notification.pdb
+D:\CareFit\Workspace\CareFit\CareFit.Notification\obj\Debug\CareFit.Notification.dll
+D:\CareFit\Workspace\CareFit\CareFit.Notification\obj\Debug\CareFit.Notification.pdb
+D:\CareFit\Workspace\CareFit\CareFit.Notification\obj\Debug\CareFit.Notification.csprojResolveAssemblyReference.cache
+D:\Ramon\CareFit\Workspace\CareFit\CareFit.Notification\bin\Debug\CareFit.Notification.dll
+D:\Ramon\CareFit\Workspace\CareFit\CareFit.Notification\bin\Debug\CareFit.Notification.pdb
+D:\Ramon\CareFit\Workspace\CareFit\CareFit.Notification\obj\Debug\CareFit.Notification.csprojResolveAssemblyReference.cache
+D:\Ramon\CareFit\Workspace\CareFit\CareFit.Notification\obj\Debug\CareFit.Notification.dll
+D:\Ramon\CareFit\Workspace\CareFit\CareFit.Notification\obj\Debug\CareFit.Notification.pdb

@@ -1,0 +1,132 @@
+﻿@model CareFit.Portal.Models.Home.TopItensVM
+
+<div class="row">
+    <div class="col-sm-3 col-xs-6">
+        <!-- Box info -->
+        <div class="box-info">
+            <!-- Icon box -->
+            <div class="icon-box">
+                <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x success"></i>
+                    <i class="fa fa-flag fa-stack-1x fa-inverse"></i>
+                </span>
+            </div>
+            <!-- End div .icon-box -->
+            <!-- Text box -->
+            <div class="text-box">
+                <h3>@Model.OpenTrainnings</h3>
+                <p>Treinos Abertos</p>
+            </div>
+            <!-- End div .text-box -->
+            <div class="clear"></div>
+            <!-- Progress bar -->
+            @{
+                double perc = 0;
+                if (Model.DoneTrainningsSessions != 0 && Model.TotalTrainningsSessions != 0)
+                {
+                    perc = ((double)Model.DoneTrainningsSessions / (double)Model.TotalTrainningsSessions) * (double)100;
+                }
+                        
+            }
+            <div class="progress progress-xs">
+                <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="80" aria-valuemin="0" aria-valuemax="100" style="width: @perc%">
+                    <span class="sr-only">@perc % Complete</span>
+                </div>
+            </div>
+            <!-- End div .progress .progress-xs -->
+            <p class="text-center">@Model.DoneTrainningsSessions / @Model.TotalTrainningsSessions Series Efetuadas [ @perc% ] </p>
+        </div>
+        <!-- End div .info-box -->
+    </div>
+
+    <div class="col-sm-3 col-xs-6">
+        <!-- Box info -->
+        <div class="box-info">
+            <!-- Icon box -->
+            <div class="icon-box">
+                <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x danger"></i>
+                    <i class="fa fa-bell fa-stack-1x fa-inverse"></i>
+                </span>
+            </div>
+            <!-- End div .icon-box -->
+            <!-- Text box -->
+            <div class="text-box">
+                <h3>1,234</h3>
+                <p>ORDERS</p>
+            </div>
+            <!-- End div .text-box -->
+            <div class="clear"></div>
+            <!-- Progress bar -->
+            <div class="progress progress-xs">
+                <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="65" aria-valuemin="0" aria-valuemax="100" style="width: 65%">
+                    <span class="sr-only">65% Complete</span>
+                </div>
+            </div>
+            <!-- End div .progress .progress-xs -->
+            <p class="text-center">5% Higher than Yesterday</p>
+        </div>
+        <!-- End div .info-box -->
+    </div>
+
+    <div class="col-sm-3 col-xs-6">
+        <!-- Box info -->
+        <div class="box-info">
+            <!-- Icon box -->
+            <div class="icon-box">
+                <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x info"></i>
+                    <i class="fa fa-tachometer fa-stack-1x fa-inverse"></i>
+                </span>
+            </div>
+            <!-- End div .icon-box -->
+            <!-- Text box -->
+            <div class="text-box">
+                <h3>Nenhum</h3>
+                <p>Exame Fisico</p>
+            </div>
+            <!-- End div .text-box -->
+            <div class="clear"></div>
+            <!-- Progress bar -->
+            <div class="progress progress-xs">
+                <div class="progress-bar progress-bar-info" role="progressbar" aria-valuenow="95" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                    <span class="sr-only">0% Complete</span>
+                </div>
+            </div>
+            <!-- End div .progress .progress-xs -->
+            <p class="text-center">Você não possue Exame Fisico</p>
+        </div>
+        <!-- End div .info-box -->
+    </div>
+
+    <div class="col-sm-3 col-xs-6">
+        <!-- Box info -->
+        <div class="box-info">
+            <!-- Icon box -->
+            <div class="icon-box">
+                <span class="fa-stack">
+                    <i class="fa fa-circle fa-stack-2x warning"></i>
+                    <i class="fa fa-stethoscope fa-stack-1x fa-inverse"></i>
+                </span>
+            </div>
+            <!-- End div .icon-box -->
+            <!-- Text box -->
+            <div class="text-box">
+                <h3>Nenhum</h3>
+                <p>Exame Médico</p>
+            </div>
+            <!-- End div .text-box -->
+            <div class="clear"></div>
+            <!-- Progress bar -->
+            <div class="progress progress-xs">
+                <div class="progress-bar progress-bar-warning" role="progressbar" aria-valuenow="55" aria-valuemin="0" aria-valuemax="100" style="width: 0%">
+                    <span class="sr-only">0% Complete</span>
+                </div>
+            </div>
+            <!-- End div .progress .progress-xs -->
+            <p class="text-center">Você não possue Exames Médicos</p>
+        </div>
+        <!-- End div .info-box -->
+    </div>
+
+</div>

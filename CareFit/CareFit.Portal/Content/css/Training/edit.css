@@ -1,0 +1,10 @@
+﻿#trainning-color {
+	/*margin:0;*/
+	/*padding:0;*/	
+	/*width:70px;*/
+	/*height:20px;*/
+    
+    border: 1px solid #ccc;    
+	border-right:20px solid;
+	line-height:20px;
+}

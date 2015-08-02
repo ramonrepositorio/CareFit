@@ -1,0 +1,521 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{80FCF9EB-E9EA-4D9F-887A-B83B499DEBF8}</ProjectGuid>
+    <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CareFit.Portal</RootNamespace>
+    <AssemblyName>CareFit.Portal</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <MvcBuildViews>false</MvcBuildViews>
+    <UseIISExpress>true</UseIISExpress>
+    <IISExpressSSLPort />
+    <IISExpressAnonymousAuthentication />
+    <IISExpressWindowsAuthentication />
+    <IISExpressUseClassicPipelineMode />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Routing" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Web.Mvc.FixedDisplayModes, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.FixedDisplayModes.1.0.0\lib\net40\Microsoft.Web.Mvc.FixedDisplayModes.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json">
+      <HintPath>..\packages\Newtonsoft.Json.4.5.11\lib\net40\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http">
+    </Reference>
+    <Reference Include="System.Net.Http.Formatting, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Client.4.0.20710.0\lib\net40\System.Net.Http.Formatting.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Net.Http.WebRequest">
+    </Reference>
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.Helpers.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.Core.4.0.20710.0\lib\net40\System.Web.Http.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Http.WebHost, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.AspNet.WebApi.WebHost.4.0.20710.0\lib\net40\System.Web.Http.WebHost.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Mvc.4.0.20710.0\lib\net40\System.Web.Mvc.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.Razor.2.0.20715.0\lib\net40\System.Web.Razor.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Deployment, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Deployment.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Web.WebPages.Razor, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <Private>True</Private>
+      <HintPath>..\packages\Microsoft.AspNet.WebPages.2.0.20710.0\lib\net40\System.Web.WebPages.Razor.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Controllers\AuthenticationController.cs" />
+    <Compile Include="Controllers\CepController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
+    <Compile Include="Controllers\CustomerController.cs" />
+    <Compile Include="Controllers\ExerciseController.cs" />
+    <Compile Include="Controllers\ImagesController.cs" />
+    <Compile Include="Controllers\MachineController.cs" />
+    <Compile Include="Controllers\MenuController.cs" />
+    <Compile Include="Controllers\PaymentController.cs" />
+    <Compile Include="Controllers\PeopleController.cs" />
+    <Compile Include="Controllers\PostController.cs" />
+    <Compile Include="Controllers\TrainingController.cs" />
+    <Compile Include="Global.asax.cs">
+      <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Models\Authentication\IndexVM.cs" />
+    <Compile Include="Models\Authentication\ResetPasswordVM.cs" />
+    <Compile Include="Models\Chat\ChatVM.cs" />
+    <Compile Include="Models\Chat\indexVM.cs" />
+    <Compile Include="Models\GlobalCode\CookieExtension.cs" />
+    <Compile Include="Models\Customer\EditVM.cs" />
+    <Compile Include="Models\Customer\FinancialVM.cs" />
+    <Compile Include="Models\Customer\IndexVM.cs" />
+    <Compile Include="Models\Customer\PricingVM.cs" />
+    <Compile Include="Models\Exercise\EditVM.cs" />
+    <Compile Include="Models\Exercise\IndexVM.cs" />
+    <Compile Include="Models\Exercise\ListVM.cs" />
+    <Compile Include="Models\Home\TopItensVM.cs" />
+    <Compile Include="Models\Images\AddFileVM.cs" />
+    <Compile Include="Models\Images\MediaAssetUploadModelVM.cs" />
+    <Compile Include="Models\Images\PeopleAvatarVM.cs" />
+    <Compile Include="Models\Machine\EditVM.cs" />
+    <Compile Include="Models\Machine\IndexVM.cs" />
+    <Compile Include="Models\Machine\ListVM.cs" />
+    <Compile Include="Models\Menu\GetAutorizedMenuVM.cs" />
+    <Compile Include="Models\Menu\IndexVM.cs" />
+    <Compile Include="Models\People\EditVM.cs" />
+    <Compile Include="Models\People\IndexVM.cs" />
+    <Compile Include="Models\People\ListVM.cs" />
+    <Compile Include="Models\GlobalCode\SessionExtension.cs" />
+    <Compile Include="Models\Post\TimelineVM.cs" />
+    <Compile Include="Models\Trainig\CheckTrainningVM.cs" />
+    <Compile Include="Models\Trainig\DefaultTrainningExerciseREQ.cs" />
+    <Compile Include="Models\Trainig\DefaultTrainningREQ.cs" />
+    <Compile Include="Models\Trainig\EditVM.cs" />
+    <Compile Include="Models\Trainig\ListDefaultTrainningsVM.cs" />
+    <Compile Include="Models\Trainig\PeopleDetailsVM.cs" />
+    <Compile Include="Models\Trainig\PeoplesListVM.cs" />
+    <Compile Include="Models\Trainig\PeoplesVM.cs" />
+    <Compile Include="Models\Trainig\PrintTrainningVM.cs" />
+    <Compile Include="Models\Trainig\ViewTrainningVM.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Models\Trainig\GetDefaultTrainningsVM.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig.cs" />
+    <Content Include="Content\Bootbox\bootbox.js" />
+    <Content Include="Content\bootstrap-3.1.1-dist\css\bootstrap-theme.css" />
+    <Content Include="Content\bootstrap-3.1.1-dist\css\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-3.1.1-dist\css\bootstrap.css" />
+    <Content Include="Content\bootstrap-3.1.1-dist\css\bootstrap.min.css" />
+    <Content Include="Content\bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\bootstrap-3.1.1-dist\js\bootstrap.js" />
+    <Content Include="Content\bootstrap-3.1.1-dist\js\bootstrap.min.js" />
+    <Content Include="Content\Componentes\colpick\css\colpick.css" />
+    <Content Include="Content\Componentes\colpick\js\colpick.js" />
+    <Content Include="Content\Componentes\jquery.form\jquery.form.min.js" />
+    <Content Include="Content\css\Global\BootstrapPrint.css" />
+    <Content Include="Content\css\Global\NavBarOrientation.css" />
+    <Content Include="Content\css\Training\edit.css" />
+    <Content Include="Content\Componentes\FullCalendar\fullcalendar.css" />
+    <Content Include="Content\Componentes\FullCalendar\fullcalendar.js" />
+    <Content Include="Content\Componentes\FullCalendar\fullcalendar.min.js" />
+    <Content Include="Content\Componentes\FullCalendar\fullcalendar.print.css" />
+    <Content Include="Content\Componentes\FullCalendar\gcal.js" />
+    <Content Include="Content\Componentes\JCrop\css\Jcrop.gif" />
+    <Content Include="Content\Componentes\JCrop\css\jquery.Jcrop.css" />
+    <Content Include="Content\Componentes\JCrop\css\jquery.Jcrop.min.css" />
+    <Content Include="Content\Componentes\JCrop\js\jquery.color.js" />
+    <Content Include="Content\Componentes\JCrop\js\jquery.Jcrop.js" />
+    <Content Include="Content\Componentes\JCrop\js\jquery.Jcrop.min.js" />
+    <Content Include="Content\Componentes\JCrop\js\jquery.min.js" />
+    <Content Include="Content\Componentes\slider\bootstrap-slider.min.js" />
+    <Content Include="Content\Componentes\slider\css\bootstrap-slider.css" />
+    <Content Include="Content\Componentes\slider\css\bootstrap-slider.min.css" />
+    <Content Include="Content\Componentes\TypeAhead\bootstrap-typeahead.min.js" />
+    <Content Include="Content\Componentes\Uploadify\cancel.png" />
+    <Content Include="Content\Componentes\Uploadify\expressInstall.swf" />
+    <Content Include="Content\Componentes\Uploadify\jquery.uploadify.v2.1.4.js" />
+    <Content Include="Content\Componentes\Uploadify\jquery.uploadify.v2.1.4.min.js" />
+    <Content Include="Content\Componentes\Uploadify\swfobject.js" />
+    <Content Include="Content\Componentes\Uploadify\uploadify.allglyphs.swf" />
+    <Content Include="Content\Componentes\Uploadify\uploadify.css" />
+    <Content Include="Content\Componentes\Uploadify\uploadify.swf" />
+    <Content Include="Content\css\People\list.css" />
+    <Content Include="Content\css\Home\index.css" />
+    <Content Include="Content\css\Training\printTrainning.css" />
+    <Content Include="Content\css\Training\ViewTrainning.css" />
+    <Content Include="Content\jquery.form.js" />
+    <Content Include="Content\js\Authentication\index.js" />
+    <Content Include="Content\js\Authentication\resetPassword.js" />
+    <Content Include="Content\js\Chat\chat.js" />
+    <Content Include="Content\js\Chat\index.js" />
+    <Content Include="Content\js\Exercise\edit.js" />
+    <Content Include="Content\js\Exercise\index.js" />
+    <Content Include="Content\js\Exercise\list.js" />
+    <Content Include="Content\js\Global\Utils.js" />
+    <Content Include="Content\js\Home\index.js" />
+    <Content Include="Content\js\Images\Edit.js" />
+    <Content Include="Content\js\Machine\edit.js" />
+    <Content Include="Content\js\jquery\jquery-2.1.0.min.js" />
+    <Content Include="Content\js\Machine\index.js" />
+    <Content Include="Content\js\Machine\list.js" />
+    <Content Include="Content\js\People\edit.js" />
+    <Content Include="Content\js\People\index.js" />
+    <Content Include="Content\js\People\list.js" />
+    <Content Include="Content\js\People\searchFriend.js" />
+    <Content Include="Content\js\Post\timeline.js" />
+    <Content Include="Content\js\Shared\_Layout.js" />
+    <Content Include="Content\js\Trainig\checkTrainning.js" />
+    <Content Include="Content\js\Trainig\edit.js" />
+    <Content Include="Content\js\Trainig\getDefaultTrainnings.js" />
+    <Content Include="Content\js\Trainig\listDefaultTrainnings.js" />
+    <Content Include="Content\js\Trainig\peopleDetails.js" />
+    <Content Include="Content\js\Trainig\peoples.js" />
+    <Content Include="Content\js\Trainig\peoplesList.js" />
+    <Content Include="Content\js\Trainig\printTrainning.js" />
+    <Content Include="Content\js\Trainig\ViewTrainning.js" />
+    <Content Include="Content\Laceng\assets\css\animate.css" />
+    <Content Include="Content\Laceng\assets\css\bootstrap.min.css" />
+    <Content Include="Content\Laceng\assets\css\style-responsive.css" />
+    <Content Include="Content\Laceng\assets\css\style.css" />
+    <Content Include="Content\Laceng\assets\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="Content\Laceng\assets\img\avatar\1.jpg" />
+    <Content Include="Content\Laceng\assets\img\avatar\2.jpg" />
+    <Content Include="Content\Laceng\assets\img\avatar\3.jpg" />
+    <Content Include="Content\Laceng\assets\img\avatar\4.jpg" />
+    <Content Include="Content\Laceng\assets\img\avatar\5.jpg" />
+    <Content Include="Content\Laceng\assets\img\avatar\masarie.jpg" />
+    <Content Include="Content\Laceng\assets\img\favicon.ico" />
+    <Content Include="Content\Laceng\assets\img\logo-login.png" />
+    <Content Include="Content\Laceng\assets\img\logo.png" />
+    <Content Include="Content\Laceng\assets\js\bootstrap.min.js" />
+    <Content Include="Content\Laceng\assets\js\example-morris.js" />
+    <Content Include="Content\Laceng\assets\js\jquery.js" />
+    <Content Include="Content\Laceng\assets\js\lanceng.js" />
+    <Content Include="Content\Laceng\assets\third\datepicker\css\datepicker.css" />
+    <Content Include="Content\Laceng\assets\third\datepicker\js\bootstrap-datepicker.js" />
+    <Content Include="Content\Laceng\assets\third\font-awesome\css\font-awesome.min.css" />
+    <Content Include="Content\Laceng\assets\third\font-awesome\fonts\fontawesome-webfont.svg" />
+    <Content Include="Content\Laceng\assets\third\icheck\icheck.min.js" />
+    <Content Include="Content\Laceng\assets\third\icheck\skins\minimal\grey.css" />
+    <Content Include="Content\Laceng\assets\third\icheck\skins\minimal\grey.png" />
+    <Content Include="Content\Laceng\assets\third\input\bootstrap.file-input.js" />
+    <Content Include="Content\Laceng\assets\third\magnific-popup\jquery.magnific-popup.min.js" />
+    <Content Include="Content\Laceng\assets\third\magnific-popup\magnific-popup.css" />
+    <Content Include="Content\Laceng\assets\third\morris\morris.css" />
+    <Content Include="Content\Laceng\assets\third\morris\morris.js" />
+    <Content Include="Content\Laceng\assets\third\nifty-modal\css\component.css" />
+    <Content Include="Content\Laceng\assets\third\nifty-modal\js\classie.js" />
+    <Content Include="Content\Laceng\assets\third\nifty-modal\js\modalEffects.js" />
+    <Content Include="Content\Laceng\assets\third\select\bootstrap-select.min.css" />
+    <Content Include="Content\Laceng\assets\third\select\bootstrap-select.min.js" />
+    <Content Include="Content\Laceng\assets\third\slimscroll\jquery.slimscroll.min.js" />
+    <Content Include="Content\Laceng\assets\third\sortable\sortable-theme-bootstrap.css" />
+    <Content Include="Content\Laceng\assets\third\sortable\sortable.min.js" />
+    <Content Include="Content\Laceng\assets\third\summernote\summernote.css" />
+    <Content Include="Content\Laceng\assets\third\summernote\summernote.js" />
+    <Content Include="Content\Laceng\assets\third\validator\bootstrapValidator.min.js" />
+    <Content Include="Content\Laceng\assets\third\validator\example.js" />
+    <Content Include="Content\Laceng\assets\third\weather-icon\css\weather-icons.min.css" />
+    <Content Include="Content\Laceng\assets\third\wizard\jquery.easyWizard.js" />
+    <Content Include="Content\Laceng\assets\third\wizard\scripts.js" />
+    <Content Include="Content\Laceng\images\big\img001.jpg" />
+    <Content Include="Content\Laceng\images\big\img002.jpg" />
+    <Content Include="Content\Laceng\images\big\img003.jpg" />
+    <Content Include="Content\Laceng\images\big\img004.jpg" />
+    <Content Include="Content\Laceng\images\big\img005.jpg" />
+    <Content Include="Content\Laceng\images\big\img006.jpg" />
+    <Content Include="Content\Laceng\images\big\img007.jpg" />
+    <Content Include="Content\Laceng\images\big\img008.jpg" />
+    <Content Include="Content\Laceng\images\big\img009.jpg" />
+    <Content Include="Content\Laceng\images\big\img010.jpg" />
+    <Content Include="Content\Laceng\images\small\img001_small.jpg" />
+    <Content Include="Content\Laceng\images\small\img002_small.jpg" />
+    <Content Include="Content\Laceng\images\small\img003_small.jpg" />
+    <Content Include="Content\Laceng\images\small\img004_small.jpg" />
+    <Content Include="Content\Laceng\images\small\img005_small.jpg" />
+    <Content Include="Content\Laceng\images\small\img006_small.jpg" />
+    <Content Include="Content\Laceng\images\small\img007_small.jpg" />
+    <Content Include="Content\Laceng\images\small\img008_small.jpg" />
+    <Content Include="Content\Laceng\images\small\img009_small.jpg" />
+    <Content Include="Content\Laceng\images\small\img010_small.jpg" />
+    <Content Include="Content\Laceng\images\user-bg.jpg" />
+    <Content Include="Content\Laceng\images\weather-bg.jpg" />
+    <Content Include="Content\typeahead\typeahead-0.10.2.js" />
+    <Content Include="Global.asax" />
+    <Content Include="img\banner\banner1.jpg" />
+    <Content Include="img\banner\banner2.jpg" />
+    <Content Include="img\banner\banner3.jpg" />
+    <Content Include="Uploads\Images\no-image.jpg" />
+    <Content Include="Uploads\Images\no-image.png" />
+    <Content Include="Uploads\Images\readme.txt" />
+    <Content Include="Web.config" />
+    <Content Include="Web.Debug.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Web.Release.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </Content>
+    <Content Include="Views\Web.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="App_Data\" />
+    <Folder Include="Uploads\Temp\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CareFit.Domain\CareFit.Domain.csproj">
+      <Project>{8dfa1bda-da6d-4a3c-bc56-6620a945c25d}</Project>
+      <Name>CareFit.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CareFit.Utils\CareFit.Utils.csproj">
+      <Project>{ae542591-7ed3-4655-84aa-53a6e54894cd}</Project>
+      <Name>CareFit.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-3.1.1-dist\css\bootstrap-theme.css.map" />
+    <Content Include="Content\bootstrap-3.1.1-dist\css\bootstrap.css.map" />
+    <Content Include="Content\bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\bootstrap-3.1.1-dist\fonts\glyphicons-halflings-regular.woff" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_LayoutAuthentication.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Authentication\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Home\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_Layout.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Menu\GetAutorizedMenu.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\People\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\People\List.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\People\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\js\jquery\jquery.mask.js" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Laceng\assets\third\font-awesome\fonts\fontawesome-webfont.eot" />
+    <Content Include="Content\Laceng\assets\third\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <Content Include="Content\Laceng\assets\third\font-awesome\fonts\fontawesome-webfont.woff" />
+    <Content Include="Content\Laceng\assets\third\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Content\Laceng\assets\third\weather-icon\font\weathericons-regular-webfont.ttf" />
+    <Content Include="Content\Laceng\assets\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="Content\Laceng\assets\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="Content\Laceng\assets\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="Content\Componentes\Uploadify\check.php" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\air\logging\FileTarget.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\crypto\HMAC.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\crypto\MD5.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\crypto\MD5Stream.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\crypto\SHA1.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\crypto\SHA224.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\crypto\SHA256.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\crypto\WSSEUsernameToken.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\errors\IllegalStateError.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\fileformats\vcard\Address.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\fileformats\vcard\Email.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\fileformats\vcard\Phone.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\fileformats\vcard\VCard.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\fileformats\vcard\VCardParser.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\images\BitString.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\images\JPGEncoder.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\images\PNGEncoder.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\net\DynamicURLLoader.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\net\IURIResolver.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\net\MimeTypeMap.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\net\proxies\RFC2817Socket.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\net\URI.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\net\URIEncodingBitmap.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\Database.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\Definition.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\Dict.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\DictionaryServer.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\events\ConnectedEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\events\DatabaseEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\events\DefinitionEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\events\DefinitionHeaderEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\events\DictionaryServerEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\events\DisconnectedEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\events\ErrorEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\events\MatchEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\events\MatchStrategiesEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\events\NoMatchEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\MatchStrategy.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\Response.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\util\CompleteResponseEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\protocols\dict\util\SocketHelper.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\serialization\json\JSON.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\serialization\json\JSONDecoder.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\serialization\json\JSONEncoder.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\serialization\json\JSONParseError.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\serialization\json\JSONToken.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\serialization\json\JSONTokenizer.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\serialization\json\JSONTokenType.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\utils\ArrayUtil.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\utils\DateUtil.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\utils\DictionaryUtil.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\utils\IntUtil.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\utils\NumberFormatter.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\utils\StringUtil.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\utils\XMLUtil.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\webapis\events\ServiceEvent.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\webapis\ServiceBase.as" />
+    <Content Include="Content\Componentes\Uploadify\com\adobe\webapis\URLLoaderBase.as" />
+    <Content Include="Content\Componentes\Uploadify\uploadify.fla" />
+    <Content Include="Content\Componentes\Uploadify\uploadify.php" />
+    <Content Include="Content\Componentes\colpick\colpick.jquery.json" />
+    <Content Include="Content\Componentes\colpick\LICENSE" />
+    <Content Include="Content\Componentes\colpick\README.md" />
+    <None Include="Properties\PublishProfiles\local iis.pubxml" />
+    <None Include="Properties\PublishProfiles\LocalDeploy.pubxml" />
+    <Content Include="Views\Shared\_LayoutOld.cshtml" />
+    <Content Include="Views\Machine\Index.cshtml" />
+    <Content Include="Views\Machine\List.cshtml" />
+    <Content Include="Views\Machine\Edit.cshtml" />
+    <Content Include="Views\Exercise\Index.cshtml" />
+    <Content Include="Views\Exercise\List.cshtml" />
+    <Content Include="Views\Exercise\Edit.cshtml" />
+    <Content Include="Views\Images\AddFile.cshtml" />
+    <Content Include="Views\Training\Peoples.cshtml" />
+    <Content Include="Views\Training\PeoplesList.cshtml" />
+    <Content Include="Views\Training\PeopleDetails.cshtml" />
+    <Content Include="Views\Images\Edit.cshtml" />
+    <Content Include="Views\Training\Edit.cshtml" />
+    <Content Include="Views\Training\ViewTrainning.cshtml" />
+    <Content Include="Views\Training\CheckTrainning.cshtml" />
+    <Content Include="Views\Training\PrintTrainning.cshtml" />
+    <Content Include="Views\Shared\_PrintLayout.cshtml" />
+    <Content Include="Views\Customer\Index.cshtml" />
+    <Content Include="Views\Customer\Financial.cshtml" />
+    <Content Include="Views\Customer\Edit.cshtml" />
+    <Content Include="Views\Customer\Pricing.cshtml" />
+    <Content Include="Views\Authentication\ResetPassword.cshtml" />
+    <Content Include="Views\Training\GetDefaultTrainnings.cshtml" />
+    <Content Include="Views\Training\ListDefaultTrainnings.cshtml" />
+    <Content Include="Views\People\SearchFriend.cshtml" />
+    <Content Include="Views\Post\Timeline.cshtml" />
+    <Content Include="Views\Home\TopItens.cshtml" />
+    <Content Include="Views\Chat\Index.cshtml" />
+    <Content Include="Views\Chat\Chat.cshtml" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">
+    <AspNetCompiler VirtualPath="temp" PhysicalPath="$(WebProjectOutputDir)" />
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <UseIIS>True</UseIIS>
+          <AutoAssignPort>True</AutoAssignPort>
+          <DevelopmentServerPort>0</DevelopmentServerPort>
+          <DevelopmentServerVPath>/</DevelopmentServerVPath>
+          <IISUrl>http://localhost:62593/</IISUrl>
+          <NTLMAuthentication>False</NTLMAuthentication>
+          <UseCustomServer>False</UseCustomServer>
+          <CustomServerUrl>
+          </CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target> -->
+</Project>

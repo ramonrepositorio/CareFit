@@ -1,0 +1,23 @@
+﻿
+#calendar {
+    height:500px;
+    
+}
+.fc-header-right {
+    display:none;
+}
+
+
+.afc-completed .fc-event-title  {
+    color: yellow; 
+    background-color: #A6B5BC;   /*  grey */
+    text-decoration: line-through;
+   }
+ .afc-important .fc-event-title  {
+        color: #C00 !important;
+        font-weight: bold !important;
+   }
+ .trainning-calendar-item {
+    padding: 9px 9px 8px 9px;
+    font-weight: bold
+}

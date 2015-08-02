@@ -1,0 +1,65 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CareFit.Portal", "CareFit.Portal\CareFit.Portal.csproj", "{80FCF9EB-E9EA-4D9F-887A-B83B499DEBF8}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CareFit.Utils", "CareFit.Utils\CareFit.Utils.csproj", "{AE542591-7ED3-4655-84AA-53A6E54894CD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CareFit.Domain", "CareFit.Domain\CareFit.Domain.csproj", "{8DFA1BDA-DA6D-4A3C-BC56-6620A945C25D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CareFit.Api", "CareFit.Api\CareFit.Api.csproj", "{3A0F2E70-5555-4182-A3A7-6E746D0805C0}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CareFit.Notification", "CareFit.Notification\CareFit.Notification.csproj", "{E8202BBA-8A19-4BFE-97ED-56E0A0BB4382}"
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 6
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = http://freesource.com.br:8080/tfs/carefit
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = CareFit.Portal\\CareFit.Portal.csproj
+		SccProjectName1 = CareFit.Portal
+		SccLocalPath1 = CareFit.Portal
+		SccProjectUniqueName2 = CareFit.Utils\\CareFit.Utils.csproj
+		SccProjectName2 = CareFit.Utils
+		SccLocalPath2 = CareFit.Utils
+		SccProjectUniqueName3 = CareFit.Domain\\CareFit.Domain.csproj
+		SccProjectName3 = CareFit.Domain
+		SccLocalPath3 = CareFit.Domain
+		SccProjectUniqueName4 = CareFit.Api\\CareFit.Api.csproj
+		SccProjectName4 = CareFit.Api
+		SccLocalPath4 = CareFit.Api
+		SccProjectUniqueName5 = CareFit.Notification\\CareFit.Notification.csproj
+		SccProjectName5 = CareFit.Notification
+		SccLocalPath5 = CareFit.Notification
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{80FCF9EB-E9EA-4D9F-887A-B83B499DEBF8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{80FCF9EB-E9EA-4D9F-887A-B83B499DEBF8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{80FCF9EB-E9EA-4D9F-887A-B83B499DEBF8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{80FCF9EB-E9EA-4D9F-887A-B83B499DEBF8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AE542591-7ED3-4655-84AA-53A6E54894CD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AE542591-7ED3-4655-84AA-53A6E54894CD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AE542591-7ED3-4655-84AA-53A6E54894CD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AE542591-7ED3-4655-84AA-53A6E54894CD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8DFA1BDA-DA6D-4A3C-BC56-6620A945C25D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8DFA1BDA-DA6D-4A3C-BC56-6620A945C25D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8DFA1BDA-DA6D-4A3C-BC56-6620A945C25D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8DFA1BDA-DA6D-4A3C-BC56-6620A945C25D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3A0F2E70-5555-4182-A3A7-6E746D0805C0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3A0F2E70-5555-4182-A3A7-6E746D0805C0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3A0F2E70-5555-4182-A3A7-6E746D0805C0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3A0F2E70-5555-4182-A3A7-6E746D0805C0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E8202BBA-8A19-4BFE-97ED-56E0A0BB4382}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E8202BBA-8A19-4BFE-97ED-56E0A0BB4382}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E8202BBA-8A19-4BFE-97ED-56E0A0BB4382}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E8202BBA-8A19-4BFE-97ED-56E0A0BB4382}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

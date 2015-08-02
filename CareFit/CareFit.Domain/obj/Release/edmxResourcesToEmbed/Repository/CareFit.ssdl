@@ -1,0 +1,1106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="CareFitModel.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="CareFitModelStoreContainer">
+    <EntitySet Name="Empresas" EntityType="CareFitModel.Store.Empresas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Equipamentos" EntityType="CareFitModel.Store.Equipamentos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="EquipamentoTipos" EntityType="CareFitModel.Store.EquipamentoTipos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExercicioEquipamentos" EntityType="CareFitModel.Store.ExercicioEquipamentos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Exercicios" EntityType="CareFitModel.Store.Exercicios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ExercicioTipos" EntityType="CareFitModel.Store.ExercicioTipos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GrupoMuscular" EntityType="CareFitModel.Store.GrupoMuscular" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Imagens" EntityType="CareFitModel.Store.Imagens" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Menus" EntityType="CareFitModel.Store.Menus" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Permissoes" EntityType="CareFitModel.Store.Permissoes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaAmigos" EntityType="CareFitModel.Store.PessoaAmigos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaEmpresas" EntityType="CareFitModel.Store.PessoaEmpresas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaMensagens" EntityType="CareFitModel.Store.PessoaMensagens" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaPosts" EntityType="CareFitModel.Store.PessoaPosts" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaPostTipos" EntityType="CareFitModel.Store.PessoaPostTipos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaProfessor" EntityType="CareFitModel.Store.PessoaProfessor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Pessoas" EntityType="CareFitModel.Store.Pessoas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaSolicitacaoAmizades" EntityType="CareFitModel.Store.PessoaSolicitacaoAmizades" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaSolicitacaoEmpresa" EntityType="CareFitModel.Store.PessoaSolicitacaoEmpresa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaSolicitacaoTipo" EntityType="CareFitModel.Store.PessoaSolicitacaoTipo" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaSolicitacoes" EntityType="CareFitModel.Store.PessoaSolicitacoes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaTipoPermissoes" EntityType="CareFitModel.Store.PessoaTipoPermissoes" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaTipos" EntityType="CareFitModel.Store.PessoaTipos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaToken" EntityType="CareFitModel.Store.PessoaToken" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaTreino" EntityType="CareFitModel.Store.PessoaTreino" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="PessoaTreinoEfetuado" EntityType="CareFitModel.Store.PessoaTreinoEfetuado" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Salas" EntityType="CareFitModel.Store.Salas" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="sysdiagrams" EntityType="CareFitModel.Store.sysdiagrams" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TreinoEmpresa" EntityType="CareFitModel.Store.TreinoEmpresa" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TreinoExercicios" EntityType="CareFitModel.Store.TreinoExercicios" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TreinoProfessor" EntityType="CareFitModel.Store.TreinoProfessor" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Treinos" EntityType="CareFitModel.Store.Treinos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TreinoTipos" EntityType="CareFitModel.Store.TreinoTipos" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_Empresas_Imagens" Association="CareFitModel.Store.FK_Empresas_Imagens">
+      <End Role="Imagens" EntitySet="Imagens" />
+      <End Role="Empresas" EntitySet="Empresas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipamentos_Empresas" Association="CareFitModel.Store.FK_Equipamentos_Empresas">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="Equipamentos" EntitySet="Equipamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipamentos_EquipamentoTipos" Association="CareFitModel.Store.FK_Equipamentos_EquipamentoTipos">
+      <End Role="EquipamentoTipos" EntitySet="EquipamentoTipos" />
+      <End Role="Equipamentos" EntitySet="Equipamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Equipamentos_Salas" Association="CareFitModel.Store.FK_Equipamentos_Salas">
+      <End Role="Salas" EntitySet="Salas" />
+      <End Role="Equipamentos" EntitySet="Equipamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exercicio_Empresas" Association="CareFitModel.Store.FK_Exercicio_Empresas">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="Exercicios" EntitySet="Exercicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exercicio_ExercicioTipo" Association="CareFitModel.Store.FK_Exercicio_ExercicioTipo">
+      <End Role="ExercicioTipos" EntitySet="ExercicioTipos" />
+      <End Role="Exercicios" EntitySet="Exercicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExercicioEquipamentos_Equipamentos" Association="CareFitModel.Store.FK_ExercicioEquipamentos_Equipamentos">
+      <End Role="Equipamentos" EntitySet="Equipamentos" />
+      <End Role="ExercicioEquipamentos" EntitySet="ExercicioEquipamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_ExercicioEquipamentos_Exercicios" Association="CareFitModel.Store.FK_ExercicioEquipamentos_Exercicios">
+      <End Role="Exercicios" EntitySet="Exercicios" />
+      <End Role="ExercicioEquipamentos" EntitySet="ExercicioEquipamentos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exercicios_Equipamentos" Association="CareFitModel.Store.FK_Exercicios_Equipamentos">
+      <End Role="Equipamentos" EntitySet="Equipamentos" />
+      <End Role="Exercicios" EntitySet="Exercicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Exercicios_GrupoMuscular" Association="CareFitModel.Store.FK_Exercicios_GrupoMuscular">
+      <End Role="GrupoMuscular" EntitySet="GrupoMuscular" />
+      <End Role="Exercicios" EntitySet="Exercicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menus_Menus" Association="CareFitModel.Store.FK_Menus_Menus">
+      <End Role="Menus" EntitySet="Menus" />
+      <End Role="Menus1" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Menus_Permissoes" Association="CareFitModel.Store.FK_Menus_Permissoes">
+      <End Role="Permissoes" EntitySet="Permissoes" />
+      <End Role="Menus" EntitySet="Menus" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaAmigos_Pessoas" Association="CareFitModel.Store.FK_PessoaAmigos_Pessoas">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaAmigos" EntitySet="PessoaAmigos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaAmigos_Pessoas1" Association="CareFitModel.Store.FK_PessoaAmigos_Pessoas1">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaAmigos" EntitySet="PessoaAmigos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaEmpresas_Empresas" Association="CareFitModel.Store.FK_PessoaEmpresas_Empresas">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="PessoaEmpresas" EntitySet="PessoaEmpresas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaEmpresas_Pessoas" Association="CareFitModel.Store.FK_PessoaEmpresas_Pessoas">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaEmpresas" EntitySet="PessoaEmpresas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaEmpresas_PessoaTipos" Association="CareFitModel.Store.FK_PessoaEmpresas_PessoaTipos">
+      <End Role="PessoaTipos" EntitySet="PessoaTipos" />
+      <End Role="PessoaEmpresas" EntitySet="PessoaEmpresas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaMensagens_Pessoas" Association="CareFitModel.Store.FK_PessoaMensagens_Pessoas">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaMensagens" EntitySet="PessoaMensagens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaMensagens_Pessoas1" Association="CareFitModel.Store.FK_PessoaMensagens_Pessoas1">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaMensagens" EntitySet="PessoaMensagens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaPosts_PessoaPostTipos" Association="CareFitModel.Store.FK_PessoaPosts_PessoaPostTipos">
+      <End Role="PessoaPostTipos" EntitySet="PessoaPostTipos" />
+      <End Role="PessoaPosts" EntitySet="PessoaPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaPosts_Pessoas" Association="CareFitModel.Store.FK_PessoaPosts_Pessoas">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaPosts" EntitySet="PessoaPosts" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaProfessor_Pessoas" Association="CareFitModel.Store.FK_PessoaProfessor_Pessoas">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaProfessor" EntitySet="PessoaProfessor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaProfessor_Pessoas1" Association="CareFitModel.Store.FK_PessoaProfessor_Pessoas1">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaProfessor" EntitySet="PessoaProfessor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pessoas_Imagens" Association="CareFitModel.Store.FK_Pessoas_Imagens">
+      <End Role="Imagens" EntitySet="Imagens" />
+      <End Role="Pessoas" EntitySet="Pessoas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Pessoas_Pessoas" Association="CareFitModel.Store.FK_Pessoas_Pessoas">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="Pessoas1" EntitySet="Pessoas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaSolicitacaoAmizades_Pessoas" Association="CareFitModel.Store.FK_PessoaSolicitacaoAmizades_Pessoas">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaSolicitacaoAmizades" EntitySet="PessoaSolicitacaoAmizades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaSolicitacaoAmizades_PessoaSolicitacoes" Association="CareFitModel.Store.FK_PessoaSolicitacaoAmizades_PessoaSolicitacoes">
+      <End Role="PessoaSolicitacoes" EntitySet="PessoaSolicitacoes" />
+      <End Role="PessoaSolicitacaoAmizades" EntitySet="PessoaSolicitacaoAmizades" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaSolicitacaoEmpresa_Empresas" Association="CareFitModel.Store.FK_PessoaSolicitacaoEmpresa_Empresas">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="PessoaSolicitacaoEmpresa" EntitySet="PessoaSolicitacaoEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaSolicitacaoEmpresa_PessoaSolicitacoes" Association="CareFitModel.Store.FK_PessoaSolicitacaoEmpresa_PessoaSolicitacoes">
+      <End Role="PessoaSolicitacoes" EntitySet="PessoaSolicitacoes" />
+      <End Role="PessoaSolicitacaoEmpresa" EntitySet="PessoaSolicitacaoEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaSolicitacoes_Pessoas" Association="CareFitModel.Store.FK_PessoaSolicitacoes_Pessoas">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaSolicitacoes" EntitySet="PessoaSolicitacoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaSolicitacoes_PessoaSolicitacaoTipo" Association="CareFitModel.Store.FK_PessoaSolicitacoes_PessoaSolicitacaoTipo">
+      <End Role="PessoaSolicitacaoTipo" EntitySet="PessoaSolicitacaoTipo" />
+      <End Role="PessoaSolicitacoes" EntitySet="PessoaSolicitacoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaTipoPermissoes_Permissoes1" Association="CareFitModel.Store.FK_PessoaTipoPermissoes_Permissoes1">
+      <End Role="Permissoes" EntitySet="Permissoes" />
+      <End Role="PessoaTipoPermissoes" EntitySet="PessoaTipoPermissoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaTipoPermissoes_PessoaTipos1" Association="CareFitModel.Store.FK_PessoaTipoPermissoes_PessoaTipos1">
+      <End Role="PessoaTipos" EntitySet="PessoaTipos" />
+      <End Role="PessoaTipoPermissoes" EntitySet="PessoaTipoPermissoes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaToken_Pessoas" Association="CareFitModel.Store.FK_PessoaToken_Pessoas">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaToken" EntitySet="PessoaToken" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaTreino_Pessoas" Association="CareFitModel.Store.FK_PessoaTreino_Pessoas">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="PessoaTreino" EntitySet="PessoaTreino" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaTreino_Treinos" Association="CareFitModel.Store.FK_PessoaTreino_Treinos">
+      <End Role="Treinos" EntitySet="Treinos" />
+      <End Role="PessoaTreino" EntitySet="PessoaTreino" />
+    </AssociationSet>
+    <AssociationSet Name="FK_PessoaTreinoEfetuado_PessoaTreino" Association="CareFitModel.Store.FK_PessoaTreinoEfetuado_PessoaTreino">
+      <End Role="PessoaTreino" EntitySet="PessoaTreino" />
+      <End Role="PessoaTreinoEfetuado" EntitySet="PessoaTreinoEfetuado" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Salas_Empresas" Association="CareFitModel.Store.FK_Salas_Empresas">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="Salas" EntitySet="Salas" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TreinoEmpresa_Empresas" Association="CareFitModel.Store.FK_TreinoEmpresa_Empresas">
+      <End Role="Empresas" EntitySet="Empresas" />
+      <End Role="TreinoEmpresa" EntitySet="TreinoEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TreinoEmpresa_Treinos" Association="CareFitModel.Store.FK_TreinoEmpresa_Treinos">
+      <End Role="Treinos" EntitySet="Treinos" />
+      <End Role="TreinoEmpresa" EntitySet="TreinoEmpresa" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TreinoExercicios_Exercicios" Association="CareFitModel.Store.FK_TreinoExercicios_Exercicios">
+      <End Role="Exercicios" EntitySet="Exercicios" />
+      <End Role="TreinoExercicios" EntitySet="TreinoExercicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TreinoExercicios_Treinos" Association="CareFitModel.Store.FK_TreinoExercicios_Treinos">
+      <End Role="Treinos" EntitySet="Treinos" />
+      <End Role="TreinoExercicios" EntitySet="TreinoExercicios" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TreinoProfessor_Pessoas" Association="CareFitModel.Store.FK_TreinoProfessor_Pessoas">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="TreinoProfessor" EntitySet="TreinoProfessor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TreinoProfessor_Treinos" Association="CareFitModel.Store.FK_TreinoProfessor_Treinos">
+      <End Role="Treinos" EntitySet="Treinos" />
+      <End Role="TreinoProfessor" EntitySet="TreinoProfessor" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treinos_Pessoas1" Association="CareFitModel.Store.FK_Treinos_Pessoas1">
+      <End Role="Pessoas" EntitySet="Pessoas" />
+      <End Role="Treinos" EntitySet="Treinos" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Treinos_TreinoTipos" Association="CareFitModel.Store.FK_Treinos_TreinoTipos">
+      <End Role="TreinoTipos" EntitySet="TreinoTipos" />
+      <End Role="Treinos" EntitySet="Treinos" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="Empresas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ImagemID" Type="bigint" />
+  </EntityType>
+  <EntityType Name="Equipamentos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="1000" />
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+    <Property Name="SalaId" Type="int" />
+    <Property Name="Primario" Type="bit" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="Secundario" Type="bit" Nullable="false" />
+    <Property Name="EquipamentoTipoId" Type="int" Nullable="false" />
+    <Property Name="Identificacao" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="EquipamentoTipos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ExercicioEquipamentos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EquipamentoID" Type="int" Nullable="false" />
+    <Property Name="ExercicioId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Exercicios">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="ExercicioTipoId" Type="int" Nullable="false" />
+    <Property Name="RepousoMinimo" Type="int" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+    <Property Name="GrupoMuscularId" Type="int" Nullable="false" />
+    <Property Name="EquipamentoId" Type="int" />
+  </EntityType>
+  <EntityType Name="ExercicioTipos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="GrupoMuscular">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Imagens">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Url" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Cadastro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Menus">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="ToolTip" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Icon" Type="varchar" MaxLength="40" />
+    <Property Name="Controller" Type="varchar" MaxLength="50" />
+    <Property Name="Action" Type="varchar" MaxLength="50" />
+    <Property Name="PermisaoId" Type="int" Nullable="false" />
+    <Property Name="MenuId" Type="int" />
+    <Property Name="Ordem" Type="varchar" Nullable="false" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="Permissoes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Chave" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PessoaAmigos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaId" Type="bigint" Nullable="false" />
+    <Property Name="PessoaAmigoId" Type="bigint" Nullable="false" />
+    <Property Name="Cadastro" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PessoaEmpresas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaId" Type="bigint" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+    <Property Name="PessoaTipoId" Type="int" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PessoaMensagens">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaRemetenteId" Type="bigint" Nullable="false" />
+    <Property Name="PessoaDestinatarioId" Type="bigint" Nullable="false" />
+    <Property Name="Mensagem" Type="varchar(max)" Nullable="false" />
+    <Property Name="DataEnvio" Type="datetime" Nullable="false" />
+    <Property Name="DataVisualizado" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PessoaPosts">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaId" Type="bigint" Nullable="false" />
+    <Property Name="PessoaPostTipoId" Type="int" Nullable="false" />
+    <Property Name="DataPost" Type="datetime" Nullable="false" />
+    <Property Name="Post" Type="varchar(max)" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PessoaPostTipos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PessoaProfessor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaId" Type="bigint" Nullable="false" />
+    <Property Name="ProfessorPeopleId" Type="bigint" Nullable="false" />
+    <Property Name="Inicio" Type="datetime" Nullable="false" />
+    <Property Name="Termino" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Pessoas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Sobrenome" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="Email" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Login" Type="varchar" MaxLength="50" />
+    <Property Name="Senha" Type="varchar" Nullable="false" MaxLength="32" />
+    <Property Name="Cadastro" Type="datetime" Nullable="false" />
+    <Property Name="Cpf" Type="varchar" MaxLength="14" />
+    <Property Name="RG" Type="varchar" MaxLength="12" />
+    <Property Name="Nascimento" Type="date" Nullable="false" />
+    <Property Name="Telefone" Type="varchar" MaxLength="20" />
+    <Property Name="Celular" Type="varchar" MaxLength="20" />
+    <Property Name="Cep" Type="varchar" MaxLength="9" />
+    <Property Name="Endereco" Type="varchar" MaxLength="300" />
+    <Property Name="EnderecoNumero" Type="varchar" MaxLength="10" />
+    <Property Name="EnderecoComplemento" Type="varchar" MaxLength="30" />
+    <Property Name="Cidade" Type="varchar" MaxLength="100" />
+    <Property Name="Estado" Type="varchar" MaxLength="2" />
+    <Property Name="Bairro" Type="varchar" MaxLength="100" />
+    <Property Name="ProfessorPessoaId" Type="bigint" />
+    <Property Name="ImagemId" Type="bigint" />
+  </EntityType>
+  <EntityType Name="PessoaSolicitacaoAmizades">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaAmigoId" Type="bigint" Nullable="false" />
+    <Property Name="Aceito" Type="bit" />
+    <Property Name="PessoaSolicitacaoId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PessoaSolicitacaoEmpresa">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaSolicitacaoId" Type="bigint" Nullable="false" />
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+    <Property Name="Resposta" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PessoaSolicitacaoTipo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="PessoaSolicitacoes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaId" Type="bigint" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="200" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="500" />
+    <Property Name="DataSolicitacao" Type="datetime" Nullable="false" />
+    <Property Name="DataResposta" Type="datetime" />
+    <Property Name="PessoaSolicitacaoTipoId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PessoaTipoPermissoes">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PermissaoID" Type="int" Nullable="false" />
+    <Property Name="PessoaTipoID" Type="int" Nullable="false" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PessoaTipos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Ativo" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PessoaToken">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaId" Type="bigint" Nullable="false" />
+    <Property Name="Token" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Cadastro" Type="datetime" Nullable="false" />
+    <Property Name="Vencimento" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PessoaTreino">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaId" Type="bigint" Nullable="false" />
+    <Property Name="TreinoId" Type="bigint" Nullable="false" />
+    <Property Name="Inicio" Type="datetime" Nullable="false" />
+    <Property Name="Termino" Type="datetime" />
+  </EntityType>
+  <EntityType Name="PessoaTreinoEfetuado">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaTreinoId" Type="bigint" Nullable="false" />
+    <Property Name="Marcacao" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Salas">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Nome" Type="varchar" Nullable="false" MaxLength="100" />
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" Nullable="false" MaxLength="128" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="TreinoEmpresa">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="EmpresaId" Type="int" Nullable="false" />
+    <Property Name="TreinoId" Type="bigint" Nullable="false" />
+    <Property Name="Cadastro" Type="datetime" Nullable="false" />
+    <Property Name="Cancelamento" Type="datetime" />
+  </EntityType>
+  <EntityType Name="TreinoExercicios">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="ExercicioId" Type="int" Nullable="false" />
+    <Property Name="TreinoId" Type="bigint" Nullable="false" />
+    <Property Name="Repeticoes" Type="int" Nullable="false" />
+    <Property Name="Ciclos" Type="int" Nullable="false" />
+    <Property Name="Carga" Type="int" />
+    <Property Name="Descanso" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TreinoProfessor">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="PessoaId" Type="bigint" Nullable="false" />
+    <Property Name="Cadastro" Type="datetime" Nullable="false" />
+    <Property Name="Cancelado" Type="datetime" />
+    <Property Name="TreinoId" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Treinos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Repeticoes" Type="int" Nullable="false" />
+    <Property Name="RepousoMinimo" Type="int" Nullable="false" />
+    <Property Name="TreinoTipoId" Type="int" Nullable="false" />
+    <Property Name="PessoaCadastroTreino" Type="bigint" Nullable="false" />
+    <Property Name="Titulo" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="Descricao" Type="varchar" MaxLength="100" />
+    <Property Name="Cor" Type="varchar" MaxLength="7" />
+  </EntityType>
+  <EntityType Name="TreinoTipos">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="Descricao" Type="varchar" Nullable="false" MaxLength="50" />
+  </EntityType>
+  <Association Name="FK_Empresas_Imagens">
+    <End Role="Imagens" Type="CareFitModel.Store.Imagens" Multiplicity="0..1" />
+    <End Role="Empresas" Type="CareFitModel.Store.Empresas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Imagens">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Empresas">
+        <PropertyRef Name="ImagemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipamentos_Empresas">
+    <End Role="Empresas" Type="CareFitModel.Store.Empresas" Multiplicity="1" />
+    <End Role="Equipamentos" Type="CareFitModel.Store.Equipamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Equipamentos">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipamentos_EquipamentoTipos">
+    <End Role="EquipamentoTipos" Type="CareFitModel.Store.EquipamentoTipos" Multiplicity="1" />
+    <End Role="Equipamentos" Type="CareFitModel.Store.Equipamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="EquipamentoTipos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Equipamentos">
+        <PropertyRef Name="EquipamentoTipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Equipamentos_Salas">
+    <End Role="Salas" Type="CareFitModel.Store.Salas" Multiplicity="0..1" />
+    <End Role="Equipamentos" Type="CareFitModel.Store.Equipamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Salas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Equipamentos">
+        <PropertyRef Name="SalaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exercicio_Empresas">
+    <End Role="Empresas" Type="CareFitModel.Store.Empresas" Multiplicity="1" />
+    <End Role="Exercicios" Type="CareFitModel.Store.Exercicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Exercicios">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exercicio_ExercicioTipo">
+    <End Role="ExercicioTipos" Type="CareFitModel.Store.ExercicioTipos" Multiplicity="1" />
+    <End Role="Exercicios" Type="CareFitModel.Store.Exercicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="ExercicioTipos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Exercicios">
+        <PropertyRef Name="ExercicioTipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExercicioEquipamentos_Equipamentos">
+    <End Role="Equipamentos" Type="CareFitModel.Store.Equipamentos" Multiplicity="1" />
+    <End Role="ExercicioEquipamentos" Type="CareFitModel.Store.ExercicioEquipamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipamentos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ExercicioEquipamentos">
+        <PropertyRef Name="EquipamentoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_ExercicioEquipamentos_Exercicios">
+    <End Role="Exercicios" Type="CareFitModel.Store.Exercicios" Multiplicity="1" />
+    <End Role="ExercicioEquipamentos" Type="CareFitModel.Store.ExercicioEquipamentos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Exercicios">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="ExercicioEquipamentos">
+        <PropertyRef Name="ExercicioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exercicios_Equipamentos">
+    <End Role="Equipamentos" Type="CareFitModel.Store.Equipamentos" Multiplicity="0..1" />
+    <End Role="Exercicios" Type="CareFitModel.Store.Exercicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Equipamentos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Exercicios">
+        <PropertyRef Name="EquipamentoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Exercicios_GrupoMuscular">
+    <End Role="GrupoMuscular" Type="CareFitModel.Store.GrupoMuscular" Multiplicity="1" />
+    <End Role="Exercicios" Type="CareFitModel.Store.Exercicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GrupoMuscular">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Exercicios">
+        <PropertyRef Name="GrupoMuscularId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menus_Menus">
+    <End Role="Menus" Type="CareFitModel.Store.Menus" Multiplicity="0..1" />
+    <End Role="Menus1" Type="CareFitModel.Store.Menus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Menus">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Menus1">
+        <PropertyRef Name="MenuId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Menus_Permissoes">
+    <End Role="Permissoes" Type="CareFitModel.Store.Permissoes" Multiplicity="1" />
+    <End Role="Menus" Type="CareFitModel.Store.Menus" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permissoes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Menus">
+        <PropertyRef Name="PermisaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaAmigos_Pessoas">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaAmigos" Type="CareFitModel.Store.PessoaAmigos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaAmigos">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaAmigos_Pessoas1">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaAmigos" Type="CareFitModel.Store.PessoaAmigos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaAmigos">
+        <PropertyRef Name="PessoaAmigoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaEmpresas_Empresas">
+    <End Role="Empresas" Type="CareFitModel.Store.Empresas" Multiplicity="1" />
+    <End Role="PessoaEmpresas" Type="CareFitModel.Store.PessoaEmpresas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaEmpresas">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaEmpresas_Pessoas">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaEmpresas" Type="CareFitModel.Store.PessoaEmpresas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaEmpresas">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaEmpresas_PessoaTipos">
+    <End Role="PessoaTipos" Type="CareFitModel.Store.PessoaTipos" Multiplicity="1" />
+    <End Role="PessoaEmpresas" Type="CareFitModel.Store.PessoaEmpresas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PessoaTipos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaEmpresas">
+        <PropertyRef Name="PessoaTipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaMensagens_Pessoas">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaMensagens" Type="CareFitModel.Store.PessoaMensagens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaMensagens">
+        <PropertyRef Name="PessoaRemetenteId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaMensagens_Pessoas1">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaMensagens" Type="CareFitModel.Store.PessoaMensagens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaMensagens">
+        <PropertyRef Name="PessoaDestinatarioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaPosts_PessoaPostTipos">
+    <End Role="PessoaPostTipos" Type="CareFitModel.Store.PessoaPostTipos" Multiplicity="1" />
+    <End Role="PessoaPosts" Type="CareFitModel.Store.PessoaPosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PessoaPostTipos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaPosts">
+        <PropertyRef Name="PessoaPostTipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaPosts_Pessoas">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaPosts" Type="CareFitModel.Store.PessoaPosts" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaPosts">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaProfessor_Pessoas">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaProfessor" Type="CareFitModel.Store.PessoaProfessor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaProfessor">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaProfessor_Pessoas1">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaProfessor" Type="CareFitModel.Store.PessoaProfessor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaProfessor">
+        <PropertyRef Name="ProfessorPeopleId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pessoas_Imagens">
+    <End Role="Imagens" Type="CareFitModel.Store.Imagens" Multiplicity="0..1" />
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Imagens">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Pessoas">
+        <PropertyRef Name="ImagemId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Pessoas_Pessoas">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="0..1" />
+    <End Role="Pessoas1" Type="CareFitModel.Store.Pessoas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Pessoas1">
+        <PropertyRef Name="ProfessorPessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaSolicitacaoAmizades_Pessoas">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaSolicitacaoAmizades" Type="CareFitModel.Store.PessoaSolicitacaoAmizades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaSolicitacaoAmizades">
+        <PropertyRef Name="PessoaAmigoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaSolicitacaoAmizades_PessoaSolicitacoes">
+    <End Role="PessoaSolicitacoes" Type="CareFitModel.Store.PessoaSolicitacoes" Multiplicity="1" />
+    <End Role="PessoaSolicitacaoAmizades" Type="CareFitModel.Store.PessoaSolicitacaoAmizades" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PessoaSolicitacoes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaSolicitacaoAmizades">
+        <PropertyRef Name="PessoaSolicitacaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaSolicitacaoEmpresa_Empresas">
+    <End Role="Empresas" Type="CareFitModel.Store.Empresas" Multiplicity="1" />
+    <End Role="PessoaSolicitacaoEmpresa" Type="CareFitModel.Store.PessoaSolicitacaoEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaSolicitacaoEmpresa">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaSolicitacaoEmpresa_PessoaSolicitacoes">
+    <End Role="PessoaSolicitacoes" Type="CareFitModel.Store.PessoaSolicitacoes" Multiplicity="1" />
+    <End Role="PessoaSolicitacaoEmpresa" Type="CareFitModel.Store.PessoaSolicitacaoEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PessoaSolicitacoes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaSolicitacaoEmpresa">
+        <PropertyRef Name="PessoaSolicitacaoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaSolicitacoes_Pessoas">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaSolicitacoes" Type="CareFitModel.Store.PessoaSolicitacoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaSolicitacoes">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaSolicitacoes_PessoaSolicitacaoTipo">
+    <End Role="PessoaSolicitacaoTipo" Type="CareFitModel.Store.PessoaSolicitacaoTipo" Multiplicity="1" />
+    <End Role="PessoaSolicitacoes" Type="CareFitModel.Store.PessoaSolicitacoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PessoaSolicitacaoTipo">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaSolicitacoes">
+        <PropertyRef Name="PessoaSolicitacaoTipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaTipoPermissoes_Permissoes1">
+    <End Role="Permissoes" Type="CareFitModel.Store.Permissoes" Multiplicity="1" />
+    <End Role="PessoaTipoPermissoes" Type="CareFitModel.Store.PessoaTipoPermissoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Permissoes">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaTipoPermissoes">
+        <PropertyRef Name="PermissaoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaTipoPermissoes_PessoaTipos1">
+    <End Role="PessoaTipos" Type="CareFitModel.Store.PessoaTipos" Multiplicity="1" />
+    <End Role="PessoaTipoPermissoes" Type="CareFitModel.Store.PessoaTipoPermissoes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PessoaTipos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaTipoPermissoes">
+        <PropertyRef Name="PessoaTipoID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaToken_Pessoas">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaToken" Type="CareFitModel.Store.PessoaToken" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaToken">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaTreino_Pessoas">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="PessoaTreino" Type="CareFitModel.Store.PessoaTreino" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaTreino">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaTreino_Treinos">
+    <End Role="Treinos" Type="CareFitModel.Store.Treinos" Multiplicity="1" />
+    <End Role="PessoaTreino" Type="CareFitModel.Store.PessoaTreino" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Treinos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaTreino">
+        <PropertyRef Name="TreinoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_PessoaTreinoEfetuado_PessoaTreino">
+    <End Role="PessoaTreino" Type="CareFitModel.Store.PessoaTreino" Multiplicity="1" />
+    <End Role="PessoaTreinoEfetuado" Type="CareFitModel.Store.PessoaTreinoEfetuado" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PessoaTreino">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="PessoaTreinoEfetuado">
+        <PropertyRef Name="PessoaTreinoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Salas_Empresas">
+    <End Role="Empresas" Type="CareFitModel.Store.Empresas" Multiplicity="1" />
+    <End Role="Salas" Type="CareFitModel.Store.Salas" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Salas">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TreinoEmpresa_Empresas">
+    <End Role="Empresas" Type="CareFitModel.Store.Empresas" Multiplicity="1" />
+    <End Role="TreinoEmpresa" Type="CareFitModel.Store.TreinoEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Empresas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TreinoEmpresa">
+        <PropertyRef Name="EmpresaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TreinoEmpresa_Treinos">
+    <End Role="Treinos" Type="CareFitModel.Store.Treinos" Multiplicity="1" />
+    <End Role="TreinoEmpresa" Type="CareFitModel.Store.TreinoEmpresa" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Treinos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TreinoEmpresa">
+        <PropertyRef Name="TreinoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TreinoExercicios_Exercicios">
+    <End Role="Exercicios" Type="CareFitModel.Store.Exercicios" Multiplicity="1" />
+    <End Role="TreinoExercicios" Type="CareFitModel.Store.TreinoExercicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Exercicios">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TreinoExercicios">
+        <PropertyRef Name="ExercicioId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TreinoExercicios_Treinos">
+    <End Role="Treinos" Type="CareFitModel.Store.Treinos" Multiplicity="1" />
+    <End Role="TreinoExercicios" Type="CareFitModel.Store.TreinoExercicios" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Treinos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TreinoExercicios">
+        <PropertyRef Name="TreinoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TreinoProfessor_Pessoas">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="TreinoProfessor" Type="CareFitModel.Store.TreinoProfessor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TreinoProfessor">
+        <PropertyRef Name="PessoaId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TreinoProfessor_Treinos">
+    <End Role="Treinos" Type="CareFitModel.Store.Treinos" Multiplicity="1" />
+    <End Role="TreinoProfessor" Type="CareFitModel.Store.TreinoProfessor" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Treinos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="TreinoProfessor">
+        <PropertyRef Name="TreinoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treinos_Pessoas1">
+    <End Role="Pessoas" Type="CareFitModel.Store.Pessoas" Multiplicity="1" />
+    <End Role="Treinos" Type="CareFitModel.Store.Treinos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Pessoas">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Treinos">
+        <PropertyRef Name="PessoaCadastroTreino" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Treinos_TreinoTipos">
+    <End Role="TreinoTipos" Type="CareFitModel.Store.TreinoTipos" Multiplicity="1" />
+    <End Role="Treinos" Type="CareFitModel.Store.Treinos" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TreinoTipos">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Treinos">
+        <PropertyRef Name="TreinoTipoId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

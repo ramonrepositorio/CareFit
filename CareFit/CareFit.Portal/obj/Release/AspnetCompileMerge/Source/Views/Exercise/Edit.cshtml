@@ -1,0 +1,153 @@
+﻿@model CareFit.Portal.Models.Exercise.EditVM
+
+<script src="~/Content/typeahead/typeahead-0.10.2.js" type="text/javascript"></script>
+<script src="~/Content/js/Exercise/edit.js" type="text/javascript"></script>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Exercicio @Model.Exercise.Descricao</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <form role="form" id="edit-people-form" action="javascript:SaveExercise();">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i>Exercicio
+                </div>
+
+                <div style="margin: 10px 5px 5px 10px">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#exercises-data" data-toggle="tab">Exercicio</a></li>
+                        <li><a href="#exercises-machines" data-toggle="tab">Equipamentos</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="exercises-data">
+                            <div class="panel-body">
+                                <div class="col-lg-12">
+                                    <input type="hidden" name="ID" id="exerciseId" value="@Model.Exercise.ID"/>
+                                    <div class="form-group col-lg-5">
+                                        <label class="control-label" for="peopleMail">Nome</label>
+                                        <input type="email" class="form-control" name="Nome" id="exerciseName" value="@Model.Exercise.Nome" placeholder="Digite o nome do exercicio" maxlength="200">
+                                    </div>
+                                    <div class="form-group col-lg-2">
+                                        <label for="exerciseType">Tipo</label>
+                                        <select class="form-control" id="exerciseType" name="ExercicioTipoId">
+                                            <option value="-1">Escolha o tipo</option>
+                                            @foreach (var exerciseType in Model.ExerciseTypes)
+                                            {
+                                                <option value="@exerciseType.ID" @(exerciseType.ID == Model.Exercise.ExercicioTipoId ? "selected" : "")>@exerciseType.Descricao</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-2">
+                                        <label for="exerciseMuscleGroup">Grupo Muscular</label>
+                                        <select class="form-control" id="exerciseMuscleGroup" name="GrupoMuscularId">
+                                            <option value="-1">Grupo Muscular</option>
+                                            @foreach (var muscleGroup in Model.ExerciseMuscleGroups)
+                                            {
+                                                <option value="@muscleGroup.ID" @(muscleGroup.ID == Model.Exercise.GrupoMuscularId ? "selected" : "")>@muscleGroup.Descricao</option>
+                                            }
+                                        </select>
+                                    </div>
+                                    <div class="form-group col-lg-2">
+                                        <label for="exerciseMinimalRest">Repouso Minimo</label>
+                                        <select class="form-control" id="exerciseMinimalRest" name="RepousoMinimo">
+                                            <option value="0" @(Model.Exercise.RepousoMinimo == 0 ? "Selected" : "")>Nenhum</option>
+                                            <option value="72" @(Model.Exercise.RepousoMinimo == 72 ? "Selected" : "")>72 horas</option>
+                                            <option value="48" @(Model.Exercise.RepousoMinimo == 48 ? "Selected" : "")>48 horas</option>
+                                            <option value="36" @(Model.Exercise.RepousoMinimo == 36 ? "Selected" : "")>36 horas</option>
+                                            <option value="24" @(Model.Exercise.RepousoMinimo == 24 ? "Selected" : "")>24 horas</option>
+                                            <option value="12" @(Model.Exercise.RepousoMinimo == 12 ? "Selected" : "")>12 horas</option>
+                                            <option value="6" @(Model.Exercise.RepousoMinimo == 6 ? "Selected" : "")>6 horas</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-group col-lg-1">
+                                        <label class="control-label" for="exerciseActive">Ativo</label>
+                                        <input type="checkbox" class="form-control" name="Ativo" id="exerciseActive" @(Model.Exercise.Ativo ? "checked" : "") value="true">
+                                    </div>
+
+                                    @if (Model.Customers.Count == 1)
+                                    {
+                                        <input type="hidden" name="EmpresaId" value="@Model.Customers.FirstOrDefault().ID" />
+                                    }
+                                    else
+                                    {
+                                        <div class="form-group col-lg-2">
+                                            <label for="machineRoom">Empresa</label>
+                                            <select class="form-control" id="machineCustomer" name="EmpresaId">
+                                                <option value="-1">Escolha a Empresa</option>
+                                                @foreach (var customer in Model.Customers)
+                                                {
+                                                    <option value="@customer.ID" @(customer.ID == Model.Exercise.EmpresaId ? "selected" : "")>@customer.Nome</option>
+                                                }
+                                            </select>
+                                        </div>    
+                                    }
+
+                                    <div class="form-group col-lg-6">
+                                        <label class="control-label" for="exerciseDescription">Descrição</label>
+                                        <textarea id="exerciseDescription" class="form-control" name="Descricao">@Model.Exercise.Descricao</textarea>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="exercises-machines">
+                            <div class="panel-body">
+                                <div class="form-group col-lg-2">
+                                    <label for="exerciseType">Maquina</label>
+                                    <select class="selectpicker" id="exercise-machine" name="EquipamentoId">
+                                        <option value="-1">Escolha o tipo</option>
+                                        @foreach (var exerciseType in Model.Machines.Where(m => m.Primario == true))
+                                        {
+                                            <option value="@exerciseType.ID" @(exerciseType.ID == Model.Exercise.ExercicioTipoId ? "selected" : "")>@exerciseType.Nome</option>
+                                        }
+                                    </select>
+                                </div>
+                                <div class="form-group col-lg-2">
+                                    <label for="exerciseType">Acessórios</label>
+                                    <select class="selectpicker" id="exercise-machine-acessory" name="ExercicioEquipamentos" multiple>
+
+                                        @foreach (var exerciseType in Model.MachineTypes)
+                                        {
+                                            var acessorys = Model.Machines.Where(m => m.EquipamentoTipoId == exerciseType.ID && m.Secundario == true).ToList();
+                                            if (acessorys != null)
+                                            {
+                                                if (acessorys.Count > 0)
+                                                {
+                                            <optgroup label="@Model.GetMachineTypeDescription(exerciseType.ID)">
+                                                @foreach (var acessory in acessorys)
+                                                {
+                                                    var selected = false;
+                                                    selected = Model.Exercise.ExercicioEquipamentos.Where(ee => ee.EquipamentoID == acessory.ID).FirstOrDefault() != null;
+                                                    <option value="@acessory.ID" @(selected ? "Selected" : "")>@acessory.Nome</option>            
+                                                }
+                                            </optgroup>
+                                                }
+
+                                            }
+
+                                        }
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <div class="panel-footer">
+                <button type="submit" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="@(Model.Exercise.ID == 0 ? "Clique aqui para cadastrar o exercicio acima" : "Clique aqui para atualizar o exercicio acima")" 
+                    id="add-new-exercise">
+                    <i class="fa fa-save"></i>&nbsp;@(Model.Exercise.ID == 0 ? "Cadastrar" : "Atualizar")</button>
+                <button type="reset" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Clique aqui para apagar todos os campos do formulario acima"><i class="fa fa-eraser"></i>&nbsp;Limpar Formulario</button>
+            </div>
+        </form>
+    </div>
+</div>
+

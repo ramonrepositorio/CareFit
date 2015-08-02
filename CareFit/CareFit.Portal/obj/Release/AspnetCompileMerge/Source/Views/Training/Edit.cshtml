@@ -1,0 +1,219 @@
+﻿@model CareFit.Portal.Models.Trainig.EditVM
+
+<link href="~/Content/Componentes/colpick/css/colpick.css" rel="stylesheet" />
+<link href="~/Content/css/Training/edit.css" rel="stylesheet" />
+
+<script src="~/Content/Componentes/TypeAhead/bootstrap-typeahead.min.js"></script>
+<script src="~/Content/Componentes/colpick/js/colpick.js"></script>
+<script src="~/Content/js/Trainig/edit.js"></script>
+
+<div class="row">
+    <div class="col-lg-12">
+        <h1 class="page-header">Treino @Model.Trainning.Titulo</h1>
+    </div>
+    <!-- /.col-lg-12 -->
+</div>
+<!-- /.row -->
+
+<div class="row">
+    <div class="col-lg-12">
+        <div role="form" id="edit-people-form">
+            <div class="panel panel-default">
+                <div class="panel-heading">
+                    <i class="fa fa-bar-chart-o fa-fw"></i>Treino
+                </div>
+
+                <div style="margin: 10px 5px 5px 10px">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a href="#trainning-data" data-toggle="tab">Detalhes do Treino</a></li>
+                        <li><a href="#exercises-trainning" data-toggle="tab">Exercicios do Treino</a></li>
+                    </ul>
+                    <div class="tab-content">
+                        <div class="tab-pane active" id="trainning-data">
+                            <div class="panel-body">
+                                <div class="col-lg-12">
+                                    <input type="hidden" name="ID" id="trainning-id" value="@Model.Trainning.ID"/>
+                                    <input type="hidden" id="people-id" value="@Model.PeopleId" />
+                                    <div class="form-group col-lg-4">
+                                        <label class="control-label" for="trainning-title">Titulo</label>
+                                        <input type="text" class="form-control" name="Nome" id="trainning-title" value="@Model.Trainning.Titulo" placeholder="Digite o Titulo do Treino" maxlength="50">
+                                    </div>
+
+                                    <div class="form-group col-lg-2">
+                                        <label class="control-label" for="trainning-rest">Repouso Minimo [horas]</label>
+                                        <input type="text" class="form-control" name="Nome" id="trainning-rest" value="@Model.Trainning.RepousoMinimo"  maxlength="3">
+                                    </div>
+                                    <div class="form-group col-lg-2">
+                                        <label class="control-label" for="trainning-repetions">Repetições</label>
+                                        <input type="text" class="form-control" name="Nome" id="trainning-repetions" value="@Model.Trainning.Repeticoes" maxlength="3">
+                                    </div>
+                                    <div class="form-group col-lg-1">
+                                        <label class="control-label" for="trainning-color">Cor</label>
+                                        <input type="text" class="form-control" name="Nome" id="trainning-color" value="@Model.Trainning.Cor" maxlength="3" style="@(string.IsNullOrEmpty(Model.Trainning.Cor) ? "border-right-color:#368ac7;" : "border-right-color:#" + Model.Trainning.Cor)" >
+                                    </div>
+
+                                    <div class="form-group col-lg-2">
+                                        <label for="exerciseType">Tipo</label>
+                                        <select class="form-control" id="trainning-types" name="">
+                                            <option value="-1">Escolha o tipo</option>
+                                            @foreach (var trainningType in Model.TrainnigTypes)
+                                            {
+                                                <option value="@trainningType.ID" @(trainningType.ID == Model.Trainning.TreinoTipoId ? "selected" : "")>@trainningType.Descricao</option>
+                                            }
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="col-lg-12">
+                                    <fieldset>
+                                        <legend>
+                                            <input type="checkbox" class="" style="width: 23px; height: 28px; vertical-align: bottom;" id="set-default-series-button" />
+                                            Padronizar Exercicios                                            
+                                        </legend>
+                                        <div>
+                                            <div class="form-group col-lg-3">
+                                                <label class="control-label" for="default-trainning-times">Repetições de Exercicios</label>
+                                                <input class="form-control"id="default-trainning-times" type="text" value="" maxlength="3"/>
+                                            </div>
+                                            <div class="form-group col-lg-3">
+                                                <label class="control-label" for="default-trainning-ciclos">Series</label>
+                                                <input class="form-control" type="text" name="Nome" id="default-trainning-ciclos" maxlength="3">
+                                            </div>
+                                            <div class="form-group col-lg-3">
+                                                <label class="control-label" for="default-trainning-interval">Intervalo entre Series [Segundos]</label>
+                                                <input class="form-control" type="text" name="Nome" id="default-trainning-interval" maxlength="3">
+                                            </div>
+                                        </div>
+                                    </fieldset>
+                                    <div class="alert alert-warning alert-dismissable" style="display: none" id="default-series-alert-panel">
+                                        <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                        <strong>Atenção!</strong> Todos os exercicios deste treino terão a configuração acima.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="tab-pane fade" id="exercises-trainning">
+                            <div class="panel-body">
+                                <div class="col-lg-12" id="trainning-exercise-search-panel">
+                                    <div class="form-group col-lg-12">
+                                        <label class="control-label" for="trainning-exercise-search">Procurar novo Exercicio</label>
+                                        <input class="form-control" id="trainning-exercise-search" placeholder="Digite o nome do exercicio para buscar" maxlength="50" autocomplete="off">
+                                    </div>
+                                </div>
+                                <div class="col-lg-12" id="trainning-exercise-edit-panel" style="display: none">
+                                    <div class="row" id="trainning-execise-search-panel">
+                                        <div class="form-group col-lg-12">
+                                            <label class="control-label" for="trainning-exercise-search">Exercicio</label>
+                                            <input class="form-control" disabled id="trainning-exercise-name">
+                                        </div>
+
+                                    </div>
+                                    <div class="row" id="trainning-exercise-fields-edit-panel">
+                                        <div class="form-group col-lg-12">
+                                            <input type="hidden" id="trainning-exercise-id" />
+                                            <input type="hidden" id="trainning-editing-exercise-id" />
+                                            <div class="form-group col-lg-2">
+                                                <label class="control-label" for="trainning-exercise-repetions">Repetições</label>
+                                                <input class="form-control" id="trainning-exercise-repetions" placeholder="Repetições do exercicio" maxlength="3">
+                                            </div>
+                                            <div class="form-group col-lg-2">
+                                                <label class="control-label" for="trainning-exercise-ciclo">Series</label>
+                                                <input class="form-control" id="trainning-exercise-ciclo" placeholder="Series de repetições">
+                                            </div>
+                                            <div class="form-group col-lg-2">
+                                                <label class="control-label" for="trainning-exercise-weigh">Carga</label>
+                                                <input class="form-control" id="trainning-exercise-weigh" placeholder="Sobre-Carga">
+                                            </div>
+                                            <div class="form-group col-lg-2">
+                                                <label class="control-label" for="trainning-exercise-interval">Intervalo [Segundos]</label>
+                                                <input class="form-control" id="trainning-exercise-interval" placeholder="Intervalo entre Series" maxlength="3">
+                                            </div>
+
+                                            <div class="form-group col-lg-1">
+                                                <label class="control-label">&nbsp;</label>
+                                                <button class="btn btn-default" id="save-edited-trainning-exercise">
+                                                    <i class="fa fa-plus">&nbsp;Salvar</i>
+                                                </button>
+                                            </div>
+                                            <div class="form-group col-lg-1">
+                                                <label class="control-label">&nbsp;</label>
+                                                <button class="btn btn-default" id="cancel-new-trainning-exercise">
+                                                    <i class="fa fa-times">&nbsp;Cancelar</i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="row" id="trainning-exercise-table-panel" style="@(Model.Trainning.TreinoExercicios.Count == 0 ? "display:none;" : "")">
+
+                                    <div class="table-responsive">
+                                        <table data-sortable="" class="table" data-sortable-initialized="true" id="trainning-exercises-table">
+                                            <thead>
+                                                <tr>
+                                                    <th data-sorted="true">Exercicio</th>
+                                                    <th data-sorted="true">Repetiçoes</th>
+                                                    <th data-sorted="true">Series</th>
+                                                    <th data-sorted="true">Carga</th>
+                                                    <th data-sorted="true">Repouso</th>
+                                                    <th data-sorted="false"></th>
+                                                </tr>
+                                            </thead>
+
+                                            <tbody>
+                                                @if (Model.Trainning.TreinoExercicios != null)
+                                                {
+                                                    foreach (var exercises in Model.Trainning.TreinoExercicios)
+                                                    {
+                                                    <tr id="trainning-exercise-row-id-@exercises.ID" trainning-exercise-id="@exercises.ID">
+                                                        <td>
+                                                            <input type="hidden" id="trainning-exercise-exercise-id-@exercises.ID" value="@exercises.ExercicioId" />
+                                                            <label id="lbl-exercise-name-@exercises.ID">@exercises.Exercicios.Nome</label>
+                                                        </td>
+                                                        <td>
+                                                            <label id="lbl-exercise-repetions-@exercises.ID">@exercises.Repeticoes</label>
+                                                        </td>
+                                                        <td>
+                                                            <label id="lbl-exercise-ciclo-@exercises.ID" >@exercises.Ciclos</label>
+                                                        </td>
+                                                        <td>
+                                                            <label id="lbl-exercise-weigh-@exercises.ID" >@exercises.Carga</label>
+                                                        </td>
+                                                        <td>
+                                                            <label id="lbl-exercise-interval-@exercises.ID">@exercises.Descanso</label>
+                                                        </td>
+                                                        <td>
+                                                            <button  class="btn btn-default"  title="Alterar Exercicio" id="edit-exercise-button-@exercises.ID">
+                                                                <span class="glyphicon glyphicon-edit"></span>
+                                                            </button>
+                                                            <button  class="btn btn-default" title="Remover Exercicio" id="remove-exercise-button-@exercises.ID">
+                                                                <span class="glyphicon glyphicon-remove"></span>
+                                                            </button>
+                                                        </td>
+                                                    </tr>
+                                                    }
+                                                }
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+
+                            </div>
+                            <div id="trainning-exercise-no-data-alert" style="@(Model.Trainning.TreinoExercicios.Count > 0 ? "display:none;" : "")">
+                                <div class="alert alert-warning alert-dismissable" style="">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    <strong>Atenção!</strong> Nenhum exercio cadastrado para esse treino
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="panel-footer">
+                    <button class="btn btn-default" title="Clique aqui para atualizar o equipamento acima" id="add-new-people">
+                        <i class="fa fa-save"></i>&nbsp;Salvar</button>
+                    <button type="reset" class="btn btn-default" title="" data-original-title="Clique aqui para apagar todos os campos do formulario acima"><i class="fa fa-eraser"></i>&nbsp;Limpar Formulario</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

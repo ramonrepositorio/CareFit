@@ -1,0 +1,21 @@
+﻿@model CareFit.Portal.Models.Images.AddFileVM
+
+<div class="container">
+	<span class="btn btn-success fileinput-button">
+		<i class="glyphicon glyphicon-plus"></i>
+		<span>Add files...</span>
+		<input id="fileupload" type="file" name="files[]" multiple>
+	</span>
+	<br />
+	<div class="progress">
+		<div class="progress-bar" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" style="width: 0%;">
+			<span class="sr-only">0% complete</span>
+		</div>
+	</div>
+	<br />
+	<div class="file_name"></div>
+	<br />
+	<div class="file_type"></div>
+	<br />
+	<div class="file_size"></div>
+</div>

@@ -1,0 +1,38 @@
+﻿@model CareFit.Portal.Models.People.ListVM
+<link href="~/Content/css/People/list.css" rel="stylesheet" />
+<script src="~/Content/js/People/list.js"></script>
+
+
+<div class="table-responsive" id="people-list-content">
+    <table data-sortable="" class="table" data-sortable-initialized="true" id="table-list-people">
+        <thead>
+            <tr>
+                <th data-sorted="true">ID</th>
+                <th data-sorted="true">Nome</th>
+                <th data-sorted="true">Sobrenome</th>
+                <th data-sorted="true">Email</th>
+                <th data-sorted="true">Tipo</th>
+                <th data-sorted="true">Cadastro</th>
+                <th data-sorted="false">Ações</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var people in Model.Peoples)
+            {
+                <tr>
+                    <td>@people.ID</td>
+                    <td>@people.Nome</td>
+                    <td>@people.Sobrenome</td>
+                    <td>@people.Email</td>
+                    <td></td>
+                    <td>@people.Cadastro.ToString("dd/MM/yyyy")</td>
+                    <td>
+                        <button type="button" class="btn btn-default" people-id="@people.ID" title="Entrar no cadastro do @people.Nome @people.Sobrenome" id="edit-people-button-@people.ID">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </td>
+                </tr>    
+            }
+        </tbody>
+    </table>
+</div>

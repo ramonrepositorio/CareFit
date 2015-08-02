@@ -1,0 +1,137 @@
+﻿@model CareFit.Portal.Models.Trainig.ViewTrainningVM
+<link href="~/Content/css/Training/ViewTrainning.css" rel="stylesheet" />
+<script src="~/Content/js/Trainig/ViewTrainning.js"></script>
+
+
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body">
+                <input type="hidden" id="people-trainning-id" value="@Model.PeopleTrainning.ID" />
+                <fieldset>
+                    <legend>Ficha de Treino @Model.People.PessoaEmpresas.FirstOrDefault().Empresas.Nome</legend>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h4>Data</h4>
+                            <h4><small>@DateTime.Now.ToString("dd/MM/yyyy")</small></h4>
+                        </div>
+                        <div class="col-md-4">
+                            <h4>Professor</h4>
+                            <h4><small>@Model.Professor.Nome @Model.Professor.Sobrenome</small></h4>
+                        </div>
+                    </div>
+                </fieldset>
+
+                <fieldset>
+                    <legend>Detalhes do Treino</legend>
+
+                    <div class="row">
+                        <div class="col-md-3">
+                            <h4>Aluno</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4>Treino</h4>
+                        </div>
+                        <div class="col-md-2">
+                            <h4>Repetições</h4>
+                        </div>
+                        <div class="col-md-2">
+                            <h4>Repouso</h4>
+                        </div>
+
+                        <div class="col-md-3">
+                            <h4><small>@Model.People.Nome @Model.People.Sobrenome</small></h4>
+                        </div>
+                        <div class="col-md-3">
+                            <h4><small>@Model.Trainning.Titulo</small></h4>
+                        </div>
+                        <div class="col-md-2">
+                            <h4><small>@Model.Trainning.Repeticoes</small></h4>
+                        </div>
+                        <div class="col-md-2">
+                            <h4><small>@Model.Trainning.RepousoMinimo [hrs]</small></h4>
+                        </div>
+                    </div>
+                </fieldset>
+
+
+
+                @if (Model.Trainning.TreinoExercicios != null)
+                {                                    
+                    <fieldset>
+                        <legend>Exercicios</legend>
+
+                        <div class="row">
+                            <div class="col-md-3">
+                                <h4>Exercicio</h4>
+                            </div>
+                            <div class="col-md-3">
+                                <h4>Acessorios</h4>
+                            </div>
+                            <div class="col-md-2">
+                                <h4>Repetição</h4>
+                            </div>
+                            <div class="col-md-2">
+                                <h4>Carga</h4>
+                            </div>
+                            <div class="col-md-2">
+                                <h4>Descanso</h4>
+                            </div>
+                            @foreach (var exercises in Model.Trainning.TreinoExercicios)
+                            {
+                                <div class="col-md-3">
+                                    <h4><small>@exercises.Exercicios.Nome</small></h4>
+                                </div>                            
+                                <div class="col-md-3">
+                                    <h4><small>Acessorios</small></h4>
+                                </div>                                    
+                                <div class="col-md-2">
+                                    <h4><small>@exercises.Repeticoes</small></h4>
+                                </div>
+                                <div class="col-md-2">
+                                    <h4><small>@exercises.Carga</small></h4>
+                                </div>    
+                                <div class="col-md-2">
+                                    <h4><small>@exercises.Descanso</small></h4>
+                                </div>    
+                            }
+
+                        </div>
+                    </fieldset>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+<div class="row" id="footer-view-trainning">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-body pull-right">
+                <button class="btn btn-default btn-lg" id="open-print-people-trainng"><i class="fa fa-print"></i>&nbsp;Imprimir</button>
+                <button class="btn btn-default btn-lg" id="open-check-modal-button" data-toggle="modal" data-target="#check-trainning-dialog"><i class="fa fa-check"></i>&nbsp;Marcar como Feito</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="modal fade " id="check-trainning-dialog">
+    <div class="modal-dialog ">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+                <h4 class="modal-title">Marcar Treino <small id="header-check-trainning-modal"></small></h4>
+            </div>
+            <div class="modal-body" id="check-trainning-dialog-body">
+            </div>
+            <div class="modal-footer">                
+                <button type="button" class="btn btn-default" data-dismiss="modal" id="check-trainning-button">Voltar</button>
+            </div>
+        </div>
+        <!-- /.modal-content -->
+    </div>
+    <!-- /.modal-dialog -->
+</div>
+<!-- /.modal -->
+

@@ -1,0 +1,370 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="CareFitModelStoreContainer" CdmEntityContainer="CareFitEntities">
+    <EntitySetMapping Name="Empresas">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.Empresas)">
+        <MappingFragment StoreEntitySet="Empresas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="ImagemID" ColumnName="ImagemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Equipamentos">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.Equipamentos)">
+        <MappingFragment StoreEntitySet="Equipamentos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="SalaId" ColumnName="SalaId" />
+          <ScalarProperty Name="Primario" ColumnName="Primario" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="Secundario" ColumnName="Secundario" />
+          <ScalarProperty Name="EquipamentoTipoId" ColumnName="EquipamentoTipoId" />
+          <ScalarProperty Name="Identificacao" ColumnName="Identificacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="EquipamentoTipos">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.EquipamentoTipos)">
+        <MappingFragment StoreEntitySet="EquipamentoTipos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExercicioEquipamentos">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.ExercicioEquipamentos)">
+        <MappingFragment StoreEntitySet="ExercicioEquipamentos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EquipamentoID" ColumnName="EquipamentoID" />
+          <ScalarProperty Name="ExercicioId" ColumnName="ExercicioId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Exercicios">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.Exercicios)">
+        <MappingFragment StoreEntitySet="Exercicios">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="ExercicioTipoId" ColumnName="ExercicioTipoId" />
+          <ScalarProperty Name="RepousoMinimo" ColumnName="RepousoMinimo" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+          <ScalarProperty Name="GrupoMuscularId" ColumnName="GrupoMuscularId" />
+          <ScalarProperty Name="EquipamentoId" ColumnName="EquipamentoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ExercicioTipos">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.ExercicioTipos)">
+        <MappingFragment StoreEntitySet="ExercicioTipos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GrupoMuscular">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.GrupoMuscular)">
+        <MappingFragment StoreEntitySet="GrupoMuscular">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Imagens">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.Imagens)">
+        <MappingFragment StoreEntitySet="Imagens">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Url" ColumnName="Url" />
+          <ScalarProperty Name="Cadastro" ColumnName="Cadastro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Menus">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.Menus)">
+        <MappingFragment StoreEntitySet="Menus">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="ToolTip" ColumnName="ToolTip" />
+          <ScalarProperty Name="Icon" ColumnName="Icon" />
+          <ScalarProperty Name="Controller" ColumnName="Controller" />
+          <ScalarProperty Name="Action" ColumnName="Action" />
+          <ScalarProperty Name="PermisaoId" ColumnName="PermisaoId" />
+          <ScalarProperty Name="MenuId" ColumnName="MenuId" />
+          <ScalarProperty Name="Ordem" ColumnName="Ordem" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Permissoes">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.Permissoes)">
+        <MappingFragment StoreEntitySet="Permissoes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Chave" ColumnName="Chave" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaAmigos">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaAmigos)">
+        <MappingFragment StoreEntitySet="PessoaAmigos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+          <ScalarProperty Name="PessoaAmigoId" ColumnName="PessoaAmigoId" />
+          <ScalarProperty Name="Cadastro" ColumnName="Cadastro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaEmpresas">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaEmpresas)">
+        <MappingFragment StoreEntitySet="PessoaEmpresas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="PessoaTipoId" ColumnName="PessoaTipoId" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaMensagens">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaMensagens)">
+        <MappingFragment StoreEntitySet="PessoaMensagens">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaRemetenteId" ColumnName="PessoaRemetenteId" />
+          <ScalarProperty Name="PessoaDestinatarioId" ColumnName="PessoaDestinatarioId" />
+          <ScalarProperty Name="Mensagem" ColumnName="Mensagem" />
+          <ScalarProperty Name="DataEnvio" ColumnName="DataEnvio" />
+          <ScalarProperty Name="DataVisualizado" ColumnName="DataVisualizado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaPosts">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaPosts)">
+        <MappingFragment StoreEntitySet="PessoaPosts">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+          <ScalarProperty Name="PessoaPostTipoId" ColumnName="PessoaPostTipoId" />
+          <ScalarProperty Name="DataPost" ColumnName="DataPost" />
+          <ScalarProperty Name="Post" ColumnName="Post" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaPostTipos">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaPostTipos)">
+        <MappingFragment StoreEntitySet="PessoaPostTipos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaProfessor">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaProfessor)">
+        <MappingFragment StoreEntitySet="PessoaProfessor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+          <ScalarProperty Name="ProfessorPeopleId" ColumnName="ProfessorPeopleId" />
+          <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+          <ScalarProperty Name="Termino" ColumnName="Termino" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Pessoas">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.Pessoas)">
+        <MappingFragment StoreEntitySet="Pessoas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="Sobrenome" ColumnName="Sobrenome" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Login" ColumnName="Login" />
+          <ScalarProperty Name="Senha" ColumnName="Senha" />
+          <ScalarProperty Name="Cadastro" ColumnName="Cadastro" />
+          <ScalarProperty Name="Cpf" ColumnName="Cpf" />
+          <ScalarProperty Name="RG" ColumnName="RG" />
+          <ScalarProperty Name="Nascimento" ColumnName="Nascimento" />
+          <ScalarProperty Name="Telefone" ColumnName="Telefone" />
+          <ScalarProperty Name="Celular" ColumnName="Celular" />
+          <ScalarProperty Name="Cep" ColumnName="Cep" />
+          <ScalarProperty Name="Endereco" ColumnName="Endereco" />
+          <ScalarProperty Name="EnderecoNumero" ColumnName="EnderecoNumero" />
+          <ScalarProperty Name="EnderecoComplemento" ColumnName="EnderecoComplemento" />
+          <ScalarProperty Name="Cidade" ColumnName="Cidade" />
+          <ScalarProperty Name="Estado" ColumnName="Estado" />
+          <ScalarProperty Name="Bairro" ColumnName="Bairro" />
+          <ScalarProperty Name="ProfessorPessoaId" ColumnName="ProfessorPessoaId" />
+          <ScalarProperty Name="ImagemId" ColumnName="ImagemId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaSolicitacaoAmizades">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaSolicitacaoAmizades)">
+        <MappingFragment StoreEntitySet="PessoaSolicitacaoAmizades">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaAmigoId" ColumnName="PessoaAmigoId" />
+          <ScalarProperty Name="Aceito" ColumnName="Aceito" />
+          <ScalarProperty Name="PessoaSolicitacaoId" ColumnName="PessoaSolicitacaoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaSolicitacaoEmpresa">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaSolicitacaoEmpresa)">
+        <MappingFragment StoreEntitySet="PessoaSolicitacaoEmpresa">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaSolicitacaoId" ColumnName="PessoaSolicitacaoId" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="Resposta" ColumnName="Resposta" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaSolicitacaoTipo">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaSolicitacaoTipo)">
+        <MappingFragment StoreEntitySet="PessoaSolicitacaoTipo">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaSolicitacoes">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaSolicitacoes)">
+        <MappingFragment StoreEntitySet="PessoaSolicitacoes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="DataSolicitacao" ColumnName="DataSolicitacao" />
+          <ScalarProperty Name="DataResposta" ColumnName="DataResposta" />
+          <ScalarProperty Name="PessoaSolicitacaoTipoId" ColumnName="PessoaSolicitacaoTipoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaTipoPermissoes">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaTipoPermissoes)">
+        <MappingFragment StoreEntitySet="PessoaTipoPermissoes">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PermissaoID" ColumnName="PermissaoID" />
+          <ScalarProperty Name="PessoaTipoID" ColumnName="PessoaTipoID" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaTipos">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaTipos)">
+        <MappingFragment StoreEntitySet="PessoaTipos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Ativo" ColumnName="Ativo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaToken">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaToken)">
+        <MappingFragment StoreEntitySet="PessoaToken">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+          <ScalarProperty Name="Token" ColumnName="Token" />
+          <ScalarProperty Name="Cadastro" ColumnName="Cadastro" />
+          <ScalarProperty Name="Vencimento" ColumnName="Vencimento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaTreino">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaTreino)">
+        <MappingFragment StoreEntitySet="PessoaTreino">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+          <ScalarProperty Name="TreinoId" ColumnName="TreinoId" />
+          <ScalarProperty Name="Inicio" ColumnName="Inicio" />
+          <ScalarProperty Name="Termino" ColumnName="Termino" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PessoaTreinoEfetuado">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.PessoaTreinoEfetuado)">
+        <MappingFragment StoreEntitySet="PessoaTreinoEfetuado">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaTreinoId" ColumnName="PessoaTreinoId" />
+          <ScalarProperty Name="Marcacao" ColumnName="Marcacao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Salas">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.Salas)">
+        <MappingFragment StoreEntitySet="Salas">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Nome" ColumnName="Nome" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.sysdiagrams)">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TreinoEmpresa">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.TreinoEmpresa)">
+        <MappingFragment StoreEntitySet="TreinoEmpresa">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="EmpresaId" ColumnName="EmpresaId" />
+          <ScalarProperty Name="TreinoId" ColumnName="TreinoId" />
+          <ScalarProperty Name="Cadastro" ColumnName="Cadastro" />
+          <ScalarProperty Name="Cancelamento" ColumnName="Cancelamento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TreinoExercicios">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.TreinoExercicios)">
+        <MappingFragment StoreEntitySet="TreinoExercicios">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="ExercicioId" ColumnName="ExercicioId" />
+          <ScalarProperty Name="TreinoId" ColumnName="TreinoId" />
+          <ScalarProperty Name="Repeticoes" ColumnName="Repeticoes" />
+          <ScalarProperty Name="Ciclos" ColumnName="Ciclos" />
+          <ScalarProperty Name="Carga" ColumnName="Carga" />
+          <ScalarProperty Name="Descanso" ColumnName="Descanso" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TreinoProfessor">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.TreinoProfessor)">
+        <MappingFragment StoreEntitySet="TreinoProfessor">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="PessoaId" ColumnName="PessoaId" />
+          <ScalarProperty Name="Cadastro" ColumnName="Cadastro" />
+          <ScalarProperty Name="Cancelado" ColumnName="Cancelado" />
+          <ScalarProperty Name="TreinoId" ColumnName="TreinoId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Treinos">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.Treinos)">
+        <MappingFragment StoreEntitySet="Treinos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Repeticoes" ColumnName="Repeticoes" />
+          <ScalarProperty Name="RepousoMinimo" ColumnName="RepousoMinimo" />
+          <ScalarProperty Name="TreinoTipoId" ColumnName="TreinoTipoId" />
+          <ScalarProperty Name="PessoaCadastroTreino" ColumnName="PessoaCadastroTreino" />
+          <ScalarProperty Name="Titulo" ColumnName="Titulo" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+          <ScalarProperty Name="Cor" ColumnName="Cor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TreinoTipos">
+      <EntityTypeMapping TypeName="IsTypeOf(CareFitModel.TreinoTipos)">
+        <MappingFragment StoreEntitySet="TreinoTipos">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Descricao" ColumnName="Descricao" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

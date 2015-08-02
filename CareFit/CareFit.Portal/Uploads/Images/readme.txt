@@ -1,0 +1,1 @@
+﻿Esta pasta deve ser mantida na publicaçao de novas versões

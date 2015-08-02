@@ -1,0 +1,137 @@
+﻿@model CareFit.Portal.Models.Trainig.PeopleDetailsVM
+<script src="~/Content/js/Trainig/peopleDetails.js"></script>
+<div class="body content rows scroll-y">
+
+    <!-- Page header -->
+    <div class="page-heading animated fadeInDownBig">
+        <h1>Detalhes <small></small></h1>
+    </div>
+    <!-- End page header -->
+
+    <div class="row">
+        <div class="col-sm-4">
+            <div class="box-info">
+                <!-- User profile avatar, name and location -->
+                <div class="user-profile-sidebar">
+                    <h2><strong>Detalhes</strong></h2>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <img src="@Model.People.Imagens.Url" class="img-circle" alt="Avatar">
+                        </div>
+                        <div class="col-md-8">
+                            <!-- User identity -->
+                            <div class="user-identity">
+                                <input type="hidden" id="people-id" value="@Model.People.ID" />
+                                <h4><strong>@Model.People.Nome</strong> @Model.People.Sobrenome</h4>
+                                @{ 
+                                    int yearsOld = DateTime.Now.Year - Model.People.Nascimento.Year - (DateTime.Now.DayOfYear < Model.People.Nascimento.DayOfYear ? 1 : 0);
+                                }
+                                <p><strong>Idade</strong> @yearsOld anos </p>
+                                <p><strong>Professor </strong>José</p>
+                            </div>
+                            <!-- End div .user-identity -->
+                        </div>
+                    </div>
+                </div>
+                <!-- End div .user-profile-sidebar -->
+                <!-- Account status -->
+                <div class="account-status-data">
+                    <div class="row">
+                        <div class="col-md-4">
+                            <h5><strong>2.5</strong> Média Semanal</h5>
+                        </div>
+                        <div class="col-md-4">
+                            <h5><strong>@Model.Trainnings.Count </strong>Treinos Cadastrados</h5>
+                        </div>
+
+                    </div>
+                </div>
+
+
+                <h5>Ações</h5>
+                <!-- Social icon -->
+                <div id="social">
+                    @*<button class="btn btn-default" title="" id="remove-trainnings"><i class="fa fa-refresh"></i>&nbsp;Fechar Treinos</button>*@
+                    <button class="btn btn-default" title="" id="add-new-trainning"><i class="fa fa-plus"></i>&nbsp;Novo Treino</button>
+                    <button class="btn btn-default" title="" id="add-new-default-trainning" data-toggle="modal" data-target="#ChoseDefaultTrainningModal"><i class="fa fa-plus"></i>&nbsp;Utilizar Treino Padrão</button>
+                </div>
+                <!-- End div #social -->
+            </div>
+            <!-- End div .box-info -->
+        </div>
+        <!-- End div .col-sm-4 -->
+
+        <div class="col-sm-8">
+            <div class="box-info">
+                <div class="user-profile-sidebar">
+                    <h2><strong>Histórico</strong></h2>
+                    <div class="row">
+                        <div class="col-md-12">
+                            @if (Model.Trainnings != null && Model.Trainnings.Count > 0)
+                            {                                
+                                <div class="table-responsive">
+                                    <table data-sortable="" class="table" data-sortable-initialized="true" id="trainning-table">
+                                        <thead>
+                                            <tr>
+                                                <th data-sorted="true">Traino</th>
+                                                <th>Inicio</th>
+                                                <th>Termino</th>
+                                                <th data-sorted="false">&nbsp;</th>
+                                            </tr>
+                                        </thead>
+
+                                        <tbody>
+                                            @foreach (var trainning in Model.Trainnings)
+                                            {
+                                                <tr>
+                                                    <td>@trainning.Treinos.Titulo</td>
+
+                                                    <td>@trainning.Inicio.ToString("dd/MM/yyyy")</td>
+                                                    @if (trainning.Termino.HasValue)
+                                                    {
+                                                        <td>@trainning.Termino.Value.ToString("dd/MM/yyyy")</td>    
+                                                    }
+                                                    else
+                                                    {
+                                                        <td>Treino aberto</td>
+                                                    }
+                                                    <td>
+                                                        <button type="button" class="btn btn-default" trainning-id="@trainning.TreinoId" title="Entrar no cadastro do " id="edit-exercise-button-@trainning.TreinoId">
+                                                            <span class="glyphicon glyphicon-edit"></span>
+                                                        </button>
+                                                    </td>
+                                                </tr>
+                                            }
+                                        </tbody>
+                                    </table>
+                                </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-warning alert-dismissable">
+                                    <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                                    <strong>Atenção!</strong> este aluno não nenhum treino cadastrado.
+                                </div>
+                            }
+                        </div>
+                    </div>
+                </div>
+                <!-- End div .col-sm-8 -->
+            </div>
+            <!-- End div .row -->
+        </div>
+    </div>
+</div>
+<!-- Modal -->
+<div class="modal fade" id="ChoseDefaultTrainningModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body" id="chose-default-trainning">
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancelar</button>
+
+            </div>
+        </div>
+    </div>
+</div>

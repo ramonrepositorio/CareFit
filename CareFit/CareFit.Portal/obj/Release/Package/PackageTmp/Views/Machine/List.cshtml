@@ -1,0 +1,41 @@
+﻿@model CareFit.Portal.Models.Machine.ListVM
+
+@{
+    Layout = null;
+}
+<script src="~/Content/js/Machine/list.js"></script>
+
+<div class="table-responsive">
+    <table data-sortable="" class="table" data-sortable-initialized="true" id="machine-table">
+        <thead>
+            <tr>
+                <th data-sorted="true">Nome</th>
+                <th data-sorted="true">Tipo</th>
+                <th data-sorted="true">Maquina</th>
+                <th data-sorted="true">Acessorio</th>
+                <th data-sorted="true">Ativo</th>
+                <th data-sorted="false">&nbsp;</th>
+            </tr>
+        </thead>
+        <tbody>
+            @if (Model.Machines != null)
+            {
+                foreach (var machine in Model.Machines)
+                {
+                <tr>
+                    <td>@machine.Nome</td>
+                    <td>@(Model.GetMachineTypeDescription(machine.EquipamentoTipoId))</td>
+                    <td>@(machine.Primario ? "Sim" : "Não")</td>
+                    <td>@(machine.Secundario ? "Sim" : "Não")</td>
+                    <td>@(machine.Ativo ? "Sim" : "Não")</td>
+                    <td>
+                        <button type="button" class="btn btn-default" machine-id="@machine.ID" title="Entrar no cadastro do @machine.Nome" id="edit-exercise-button-@(machine.ID)">
+                            <span class="glyphicon glyphicon-edit"></span>
+                        </button>
+                    </td>
+                </tr>
+                }
+            }
+        </tbody>
+    </table>
+</div>

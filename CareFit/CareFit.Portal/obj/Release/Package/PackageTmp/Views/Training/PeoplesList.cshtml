@@ -1,0 +1,43 @@
+﻿@model CareFit.Portal.Models.Trainig.PeoplesListVM
+
+<script src="~/Content/js/Trainig/peoplesList.js"></script>
+<div class="table-responsive">
+    <table data-sortable="" class="table" data-sortable-initialized="true" id="machine-table">
+        <thead>
+            <tr>
+                <th data-sorted="true">Nome</th>
+                <th data-sorted="true">Sobrenome</th>
+                <th data-sorted="true">Professor</th>
+                <th data-sorted="false">&nbsp;</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var people in Model.Peoples)
+            {
+                <tr>
+                    <td>@people.Nome</td>
+                    <td>@people.Sobrenome</td>
+                    @if (people.ProfessorPessoaId.HasValue)
+                    {
+                        <td>@Model.GetProfessorName(people.ProfessorPessoaId.Value)</td> 
+                        <td>
+                            <button type="button" class="btn btn-default" id="open-trainning-details-button-@people.ID" people-id="@people.ID" >
+                                <span class="glyphicon glyphicon-edit"></span> Acessar
+                            </button>
+                        </td>  
+                    }
+                    else
+                    {
+                        <td>Nenhum professor esta vinculado a esse aluno</td>
+                        <td>
+                            <button type="button" class="btn btn-default"  title="Vincular-se como professor do aluno @people.Nome @people.Sobrenome" people-id="@people.ID" id="bind-professor-button-@people.ID">
+                                <span class="fa fa-user"></span> Vincular-se
+                            </button>
+                        </td>
+                    }
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>

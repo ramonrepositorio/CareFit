@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!-->
+<html class="no-js">
+<!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Bianca Mobile Template - Navigation Page</title>
+    <meta name="description" content="Bianca Mobile Template">
+    <meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0;">
+    <meta name="author" content="ariella - WrapBootstrap">
+    <link rel="stylesheet" href="stylesheets/bootstrap.css">
+    <link rel="stylesheet" href="stylesheets/icons.css">
+    <link rel="stylesheet" href="stylesheets/navigation-app.css">
+    <script type="text/javascript" src="javascripts/jquery-1.8.0.js"></script>
+    <script type="text/javascript" src="javascripts/modernizr-2.6.2-respond-1.1.0.min.js"></script>
+    <script type="text/javascript" src="javascripts/bootstrap.js"></script>
+    <script type="text/javascript" src="javascripts/page-transitions.js"></script>
+    <script type="text/javascript" src="javascripts/application.js"></script>
+</head>
+<body>
+    <nav id="header" class="navbar navbar-inverse navbar-fixed-top">
+        <div class="row-fluid">
+            <!--<div class="span4 sidemenu-header"></div>-->
+            <div class="navbar-inner span12">
+                <div class="">
+                    <div class="row-fluid">
+                        <div class="span1 button-column">
+                            <button type="button" class="side-menu-link nav-button" id="btn-header-nav">
+                                <i class="icon-menu"></i>
+                            </button>
+                        </div>
+                        <div class="span8 header-title">
+                            <h4>Persona CareFit</h4>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="nav-bar" class="row-fluid black items-2">
+            <ul>
+                <li class="active">
+                    <a data-id="1" href="javascript:void(0)"><i class="icon-star"></i><span>Dark Navbar</span></a>
+                </li>
+                <li>
+                    <a data-id="2" href="javascript:void(0)"><i class="icon-star-empty"></i><span>Light Navbar</span></a>
+                </li>
+                <li class="hide">
+                    <a data-id="3" href="javascript:void(0)"><i class="icon-user"></i><span>User</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="main" class="container">
+        <div class="row-fluid wrap">
+            <aside id="side-menu" role="navigation" class="well span4 oc">
+                <!--Sidebar content-->
+
+                <ul class="nav nav-list">
+                    <li class="navigation page">
+                        <a data-trans="fade" href="./navigation.html"><i class="icon-layout"></i><i class="icon-right-open"></i>Navigation</a>
+                    </li>
+                    <li class="list page">
+                        <a data-trans="flip" href="./list.html"><i class="icon-list"></i><i class="icon-right-open"></i>List</a>
+                    </li>
+                    <li class="elements page">
+                        <a data-trans="sl" href="./elements.html"><i class="icon-info-circled"></i><i class="icon-right-open"></i>Elements</a>
+                    </li>
+                    <li class="settings">
+                        <a href="javascript:void(0)"><i class="icon-cog"></i><i class="icon-right-open"></i>Settings</a>
+                    </li>
+                    <li class="help">
+                        <a href="javascript:void(0)"><i class="icon-help"></i><i class="icon-right-open"></i>Help</a>
+                    </li>
+                    <li class="logout">
+                        <a href="javascript:void(0);" id="btn-logout"><i class="icon-ccw"></i>Logout</a>
+                    </li>
+                </ul>
+            </aside>
+            <!--Body content-->
+            <section class="well " id="body-container">
+                <div class="navigation">
+                    <section id="navigation-section">
+                        <div class="page-header">
+                            <h1>Header</h1>
+                        </div>
+
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Markup</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Header w/o Navbar
+            </td>
+                                    <td>
+                                        <code>&lt;nav id="header" class="navbar navbar-inverse navbar-fixed-top"&gt;<br>
+                                            &lt;div class="row-fluid"&gt;<br>
+                                            &lt;div class="span4 sidemenu-header"&gt;&lt;/div&gt;<br>
+                                            &lt;div class="navbar-inner span12"&gt;<br>
+                                            &lt;div class="container"&gt;<br>
+                                            &lt;div class="row-fluid"&gt;<br>
+                                            &lt;div class="span1 button-column"&gt;
+                                            <br>
+                                            &lt;button type="button" class="side-menu-link nav-button" id="btn-header-nav"&gt;<br>
+                                            &lt;i class="icon-menu"&gt;&lt;/i&gt;<br>
+                                            &lt;/button&gt; 
+                                            <br>
+                                            &lt;/div&gt;<br>
+                                            &lt;div class="span8 header-title"&gt;<br>
+                                            &lt;h4&gt;Bianca Mobile&lt;/h4&gt;<br>
+                                            &lt;/div&gt;<br>
+                                            <br>
+                                            &lt;/div&gt;<br>
+                                            &lt;/div&gt;<br>
+                                            &lt;/div&gt;                   
+                                            <br>
+                                            &lt;/div&gt;<br>
+                                            &lt;/nav&gt;  
+              </code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Header with Navbar
+            </td>
+                                    <td>
+                                        <code>&lt;nav id="header" class="navbar navbar-inverse navbar-fixed-top"&gt;<br>
+                                            &lt;div class="row-fluid"&gt;<br>
+                                            &lt;div class="span4 sidemenu-header"&gt;&lt;/div&gt;<br>
+                                            &lt;div class="navbar-inner span12"&gt;<br>
+                                            &lt;div class="container"&gt;<br>
+                                            &lt;div class="row-fluid"&gt;<br>
+                                            &lt;div class="span1 button-column"&gt;
+                                            <br>
+                                            &lt;button type="button" class="side-menu-link nav-button" id="btn-header-nav"&gt;<br>
+                                            &lt;i class="icon-menu"&gt;&lt;/i&gt;<br>
+                                            &lt;/button&gt; 
+                                            <br>
+                                            &lt;/div&gt;<br>
+                                            &lt;div class="span8 header-title"&gt;<br>
+                                            &lt;h4&gt;Bianca Mobile&lt;/h4&gt;<br>
+                                            &lt;/div&gt;<br>
+                                            <br>
+                                            &lt;/div&gt;<br>
+                                            &lt;/div&gt;<br>
+                                            &lt;/div&gt;                   
+                                            <br>
+                                            &lt;/div&gt;<br>
+                                            &lt;div id="nav-bar" class="row-fluid black items-2"&gt;<br>
+                                            &lt;ul&gt;<br>
+                                            &lt;li class="active"&gt;<br>
+                                            &lt;a data-id="1" href="javascript:void(0)"&gt;&lt;i class="icon-star"&gt;&lt;/i&gt; &lt;span&gt;Dark Navbar&lt;/span&gt;&lt;/a&gt; 
+                                            <br>
+                                            &lt;/li&gt;
+                                            <br>
+                                            &lt;li&gt;<br>
+                                            &lt;a data-id="2" href="javascript:void(0)"&gt;&lt;i class="icon-star-empty"&gt;&lt;/i&gt; &lt;span&gt;Light Navbar&lt;/span&gt;&lt;/a&gt;<br>
+                                            &lt;/li&gt;<br>
+                                            &lt;li class="hide"&gt;<br>
+                                            &lt;a data-id="3" href="javascript:void(0)"&gt;&lt;i class="icon-user"&gt;&lt;/i&gt; &lt;span&gt;User&lt;/span&gt;&lt;/a&gt;<br>
+                                            &lt;/li&gt;<br>
+                                            &lt;/ul&gt;<br>
+                                            &lt;/div&gt;&lt;/nav&gt;  
+              </code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Header Title
+            </td>
+                                    <td>
+                                        <code>...&lt;div class="span8 header-title"&gt;<br>
+                                            &lt;h4&gt;Bianca Mobile&lt;/h4&gt;<br>
+                                            &lt;/div&gt;...  
+              </code>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="page-header">
+                            <h1>Navbar</h1>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Markup</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Light Nav Bar
+            </td>
+                                    <td>
+                                        <code>&lt;div id="nav-bar" class="row-fluid"&gt;&lt;ul&gt;...&lt;/ul&gt;&lt;/div&gt;  
+              </code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Dark Nav Bar
+            </td>
+                                    <td>
+                                        <code>&lt;div id="nav-bar" class="row-fluid black"&gt;&lt;ul&gt;...&lt;/ul&gt;&lt;/div&gt;  
+              </code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Nav Button (Cloud Icon)
+            </td>
+                                    <td>
+                                        <code>...&lt;li&gt;<br>
+                                            &lt;a href="javascript:void(0)"&gt;&lt;i data-icon="" class="icon"&gt;&lt;/i&gt; &lt;span&gt;Cloud&lt;/span&gt;&lt;/a&gt; 
+                                            <br>
+                                            &lt;/li&gt;...  
+              </code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Nav Button Selected (Cloud Icon)
+            </td>
+                                    <td>
+                                        <code>...&lt;li class="active"&gt;<br>
+                                            &lt;a href="javascript:void(0)"&gt;&lt;i data-icon="" class="icon"&gt;&lt;/i&gt; &lt;span&gt;Cloud&lt;/span&gt;&lt;/a&gt; 
+                                            <br>
+                                            &lt;/li&gt;...  
+              </code>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+
+                        <div class="page-header">
+                            <h1>Footer</h1>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Markup</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Footer
+             </td>
+                                    <td>
+                                        <code>&lt;footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom"&gt;<br>
+                                            &lt;div class="row-fluid"&gt;<br>
+                                            &lt;div class="span4 footer-slider"&gt;&lt;/div&gt;<br>
+                                            &lt;div class="span8 footer-inner"&gt;<br>
+                                            &lt;div class="container"&gt;<br>
+                                            &lt;div class="row-fluid"&gt;<br>
+                                            &lt;ul&gt;<br>
+                                            &lt;li data-id="1"&gt;&lt;a href="javascript:void(0)"&gt;&lt;i class="icon-direction"&gt;&lt;/i&gt; Direction&lt;/a&gt;&lt;/li&gt; 
+                                            <br>
+                                            &lt;li data-id="2"&gt;&lt;a href="javascript:void(0)"&gt;&lt;i class="icon-comment"&gt;&lt;/i&gt; Status&lt;/a&gt;&lt;/li&gt;<br>
+                                            &lt;li class="active" data-id="3"&gt;&lt;a href="javascript:void(0)"&gt;&lt;i class="icon-camera"&gt;&lt;/i&gt; Camera&lt;/a&gt;&lt;/li&gt;<br>
+                                            &lt;li data-id="4"&gt;&lt;a href="javascript:void(0)"&gt;&lt;i class="icon-dot-3"&gt;&lt;/i&gt; More&lt;/a&gt;&lt;/li&gt; 
+                                            <br>
+                                            &lt;/ul&gt;<br>
+                                            &lt;/div&gt;               
+                                            <br>
+                                            &lt;/div&gt;<br>
+                                            &lt;/div&gt;
+                                            <br>
+                                            &lt;/div&gt;<br>
+                                            &lt;div class="row-fluid"&gt;<br>
+                                            &lt;div&gt;&lt;/div&gt;<br>
+                                            &lt;/div&gt;<br>
+                                            &lt;/footer&gt;
+                 </code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Footer Item (Direction Icon)
+            </td>
+                                    <td>
+                                        <code>&lt;li &gt;&lt;a href="javascript:void(0)"&gt;&lt;i class="icon-camera"&gt;&lt;/i&gt; Camera&lt;/a&gt;&lt;/li&gt;  
+              </code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Footer Item Selected (More Icon)
+            </td>
+                                    <td>
+                                        <code>&lt;li class="active"&gt;&lt;a href="javascript:void(0)"&gt;&lt;i class="icon-dot-3"&gt;&lt;/i&gt; More&lt;/a&gt;&lt;/li&gt;  
+              </code>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <div class="page-header">
+                            <h1>Sidebar</h1>
+                        </div>
+                        <table class="table table-bordered table-striped">
+                            <thead>
+                                <tr>
+                                    <th>Name</th>
+                                    <th>Markup</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Footer
+             </td>
+                                    <td>
+                                        <code>&lt;aside id="side-menu" role="navigation" class="well span4 oc"&gt;&lt;!--Sidebar content--&gt;<br>
+                                            <br>
+                                            &lt;ul class="nav nav-list"&gt;<br>
+                                            &lt;li class="navigation page"&gt;<br>
+                                            &lt;a data-trans="fade" href="./navigation.html"&gt;&lt;i class="icon-layout"&gt;&lt;/i&gt;&lt;i class="icon-right-open"&gt;&lt;/i&gt; Navigation&lt;/a&gt;<br>
+                                            &lt;/li&gt;<br>
+                                            &lt;li class="list page"&gt;<br>
+                                            &lt;a data-trans="flip" href="./list.html"&gt;&lt;i class="icon-list"&gt;&lt;/i&gt;&lt;i class="icon-right-open"&gt;&lt;/i&gt; List&lt;/a&gt;<br>
+                                            &lt;/li&gt;<br>
+                                            &lt;li class="elements page"&gt;<br>
+                                            &lt;a data-trans="sl" href="./elements.html"&gt;&lt;i class="icon-info-circled"&gt;&lt;/i&gt;&lt;i class="icon-right-open"&gt;&lt;/i&gt; Elements&lt;/a&gt;<br>
+                                            &lt;/li&gt;<br>
+                                            &lt;li class="settings"&gt;<br>
+                                            &lt;a href="javascript:void(0)"&gt;&lt;i class="icon-cog"&gt;&lt;/i&gt;&lt;i class="icon-right-open"&gt;&lt;/i&gt; Settings&lt;/a&gt;<br>
+                                            &lt;/li&gt;<br>
+                                            &lt;li class="help"&gt;<br>
+                                            &lt;a href="javascript:void(0)"&gt;&lt;i class="icon-help"&gt;&lt;/i&gt;&lt;i class="icon-right-open"&gt;&lt;/i&gt; Help&lt;/a&gt;<br>
+                                            &lt;/li&gt;
+                                            <br>
+                                            &lt;li class="logout"&gt;<br>
+                                            &lt;a href="javascript:void(0);" id="btn-logout"&gt;&lt;i class="icon-ccw"&gt;&lt;/i&gt;Logout&lt;/a&gt;<br>
+                                            &lt;/li&gt; 
+                                            <br>
+                                            &lt;/ul&gt;<br>
+                                            &lt;/aside&gt;
+                 </code>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>Sidebar Item (Layout Icon)
+            </td>
+                                    <td>
+                                        <code>&lt;li class="navigation page"&gt;<br>
+                                            &lt;a data-trans="fade" href="./navigation.html"&gt;&lt;i class="icon-layout"&gt;&lt;/i&gt;&lt;i class="icon-right-open"&gt;&lt;/i&gt; Navigation&lt;/a&gt;<br>
+                                            &lt;/li&gt;  
+              </code>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <p>
+                        </p>
+                        <div class="alert alert-info">
+                            <button type="button" class="close" data-dismiss="alert">×</button>
+                            <strong>Info</strong> For more icons, checkout the <a href="./elements.html">Elements section</a>.
+         
+                        </div>
+                        <p></p>
+                    </section>
+                </div>
+            </section>
+        </div>
+    </div>
+
+
+    <footer id="footer" class="navbar navbar-inverse navbar-fixed-bottom">
+        <div class="row-fluid navbar-inner">
+            <div class="span4 footer-slider"></div>
+            <div class="span8 footer-inner">
+                <div class="container ">
+                    <div class="row-fluid">
+                        <ul>
+                            <li data-id="1" ><a href="javascript:void(0)"><i class="icon-direction"></i>Direction</a></li>
+                            <li data-id="2"><a href="javascript:void(0)"><i class="icon-comment"></i>Status</a></li>
+                            <li class="active" data-id="3"><a href="javascript:void(0)"><i class="icon-location"></i>Location</a></li>
+                            <li data-id="4"><a href="javascript:void(0)"><i class="icon-dot-3"></i>More</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="row-fluid">
+            <div></div>
+        </div>
+    </footer>
+
+</body>
+</html>

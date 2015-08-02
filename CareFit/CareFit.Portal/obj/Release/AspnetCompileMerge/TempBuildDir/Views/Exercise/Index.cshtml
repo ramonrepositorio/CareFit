@@ -1,0 +1,62 @@
+﻿@model CareFit.Portal.Models.Exercise.IndexVM
+
+<script src="~/Content/js/jquery/jquery.mask.js"></script>
+<script src="~/Content/js/Exercise/index.js"></script>
+
+<div class="page-heading animated fadeInDownBig">
+    <h1>CareFit <small>Exercicios</small></h1>
+</div>
+<!-- /.row -->
+<div class="row">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Filtros para a busca de Exercicio
+            </div>
+            <div class="panel-body">
+                <form class="form-inline" role="form">
+                    <div class="form-group">
+                        <select class="form-control" id="exercise-type">
+                            <option value="-1" disabled selected>Tipo do Exercicio</option>
+                            @foreach (var exerciseType in Model.ExerciseTypes)
+                            {
+                                <option id="@exerciseType.ID">@exerciseType.Descricao</option>
+                            }
+                        </select>
+                    </div>
+                      <div class="form-group">
+                        <select class="form-control" id="exercise-muscle-group">
+                            <option value="-1" disabled selected>Grupo Muscular</option>
+                            @foreach (var muscleGroup in Model.MuscleGroups)
+                            {
+                                <option id="@muscleGroup.ID">@muscleGroup.Descricao</option>
+                            }
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="sr-only" for="exercise-name">Exercicio</label>
+                        <input type="text" class="form-control" id="exercise-name" placeholder="Nome do Equipamento">
+                    </div>
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Buscar exercise utilizando os filtros selecionados" id="search-exercise">
+                        <span class="glyphicon glyphicon-search"></span>
+                    </button>
+                    <button type="button" class="btn btn-default" data-toggle="tooltip" data-placement="top" title="Cadastrar novo exercise" id="add-new-exercise">
+                        <span class="glyphicon glyphicon-plus"></span>
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="row" style="display: none" id="panel-exercise-list">
+    <div class="col-lg-12">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <i class="fa fa-bar-chart-o fa-fw"></i>Resultado da busca de exercise
+            </div>
+            <div class="panel-body" id="exercise-list">
+            </div>
+        </div>
+    </div>
+</div>

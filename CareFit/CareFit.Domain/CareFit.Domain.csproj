@@ -1,0 +1,229 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{8DFA1BDA-DA6D-4A3C-BC56-6620A945C25D}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CareFit.Domain</RootNamespace>
+    <AssemblyName>CareFit.Domain</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="EntityFramework">
+      <HintPath>..\..\..\..\IDominus\CareFit\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.Transactions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="BLL\AuthenticationBLL.cs" />
+    <Compile Include="BLL\BaseBLL.cs" />
+    <Compile Include="BLL\ChatBLL.cs" />
+    <Compile Include="BLL\CustomerBLL.cs" />
+    <Compile Include="BLL\EquipamentoBLL.cs" />
+    <Compile Include="BLL\ExerciseBLL.cs" />
+    <Compile Include="BLL\ImagesBLL.cs" />
+    <Compile Include="BLL\MachineBLL.cs" />
+    <Compile Include="BLL\MenuBLL.cs" />
+    <Compile Include="BLL\PeopleBLL.cs" />
+    <Compile Include="BLL\PeopleRequest\PeopleRequestBLL.cs" />
+    <Compile Include="BLL\PostBLL.cs" />
+    <Compile Include="BLL\RoomBLL.cs" />
+    <Compile Include="BLL\TrainningBLL.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repository\CareFit.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CareFit.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\CareFit.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\CareFit.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CareFit.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Empresas.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Equipamentos.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\EquipamentoTipos.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\ExercicioEquipamentos.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Exercicios.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\ExercicioTipos.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\GrupoMuscular.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Imagens.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Menus.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Permissoes.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaAmigos.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaEmpresas.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaMensagens.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaPosts.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaPostTipos.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaProfessor.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Pessoas.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaSolicitacaoAmizades.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaSolicitacaoEmpresa.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaSolicitacaoTipo.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaSolicitacoes.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaTipoPermissoes.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaTipos.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaToken.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaTreino.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\PessoaTreinoEfetuado.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Salas.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\sysdiagrams.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\TreinoEmpresa.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\TreinoExercicios.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\TreinoProfessor.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\Treinos.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Repository\TreinoTipos.cs">
+      <DependentUpon>CareFit.tt</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CareFit.Notification\CareFit.Notification.csproj">
+      <Project>{e8202bba-8a19-4bfe-97ed-56e0a0bb4382}</Project>
+      <Name>CareFit.Notification</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CareFit.Utils\CareFit.Utils.csproj">
+      <Project>{ae542591-7ed3-4655-84aa-53a6e54894cd}</Project>
+      <Name>CareFit.Utils</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.Config" />
+    <None Include="packages.config" />
+    <EntityDeploy Include="Repository\CareFit.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>CareFit.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Repository\CareFit.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CareFit.edmx</DependentUpon>
+      <LastGenOutput>CareFit.Context.cs</LastGenOutput>
+    </None>
+    <None Include="Repository\CareFit.edmx.diagram">
+      <DependentUpon>CareFit.edmx</DependentUpon>
+    </None>
+    <None Include="Repository\CareFit.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>CareFit.edmx</DependentUpon>
+      <LastGenOutput>CareFit.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Repository\CareFit.edmx.sql" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,12 @@
+D:\CareFit\Workspace\CareFit\CareFit.Domain\bin\Release\CareFit.Domain.dll.config
+D:\CareFit\Workspace\CareFit\CareFit.Domain\bin\Release\CareFit.Domain.dll
+D:\CareFit\Workspace\CareFit\CareFit.Domain\bin\Release\CareFit.Domain.pdb
+D:\CareFit\Workspace\CareFit\CareFit.Domain\bin\Release\CareFit.Utils.dll
+D:\CareFit\Workspace\CareFit\CareFit.Domain\bin\Release\EntityFramework.dll
+D:\CareFit\Workspace\CareFit\CareFit.Domain\bin\Release\CareFit.Utils.pdb
+D:\CareFit\Workspace\CareFit\CareFit.Domain\bin\Release\EntityFramework.xml
+D:\CareFit\Workspace\CareFit\CareFit.Domain\obj\Release\CareFit.Domain.csprojResolveAssemblyReference.cache
+D:\CareFit\Workspace\CareFit\CareFit.Domain\obj\Release\CareFit.Domain.dll
+D:\CareFit\Workspace\CareFit\CareFit.Domain\obj\Release\CareFit.Domain.pdb
+D:\CareFit\Workspace\CareFit\CareFit.Domain\bin\Release\CareFit.Notification.dll
+D:\CareFit\Workspace\CareFit\CareFit.Domain\bin\Release\CareFit.Notification.pdb

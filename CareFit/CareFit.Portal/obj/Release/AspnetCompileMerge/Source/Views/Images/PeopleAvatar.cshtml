@@ -1,0 +1,134 @@
+﻿@model CareFit.Portal.Models.Images.PeopleAvatarVM
+
+<link href="~/Content/Componentes/JCrop/css/jquery.Jcrop.min.css" rel="stylesheet" />
+
+<script src="~/Content/Componentes/Uploadify/jquery.uploadify.v2.1.4.min.js"></script>
+<script src="~/Content/Componentes/Uploadify/swfobject.js"></script>
+
+<script src="~/Content/Componentes/JCrop/js/jquery.Jcrop.min.js"></script>
+
+<script src="~/Content/Componentes/JCrop/js/jquery.color.js"></script>
+<script src="~/Content/js/Images/PeopleAvatar.js"></script>
+
+<style type="text/css">
+    /* clearfix */
+    .clearfix:after {
+        content: ".";
+        display: block;
+        clear: both;
+        visibility: hidden;
+        line-height: 0;
+        height: 0;
+    }
+
+    .clearfix {
+        display: inline-block;
+    }
+
+    html[xmlns] .clearfix {
+        display: block;
+    }
+
+    * html .clearfix {
+        height: 1%;
+    }
+
+
+    /* The pane holding the image */
+    .pane > * {
+        float: left;
+    }
+
+    .pane > table {
+        margin: 1em;
+    }
+
+        .pane > table td {
+            text-align: right;
+            padding-right: .5em;
+        }
+
+    pre.code {
+        padding: 1em;
+        margin: 0;
+        background-color: #eee;
+        border: 1px dashed #ccc;
+    }
+
+    /* Override some jrac css */
+    .jrac_viewport {
+        width: 440px;
+        height: 330px;
+    }
+</style>
+
+<div class="row" style="text-align:center">
+    <div class="col-sm-6 col-xs-12">
+        <div class="box-info full">
+            <div class="img-wrap">
+                <img id="avatar-picture-original" class="media-object" />
+            </div>
+            <div class="des-thumbnail">
+                <h4>Imagem Original</h4>
+                <button class="btn btn-default"><i class="fa fa-cut"></i> Cortar</button>
+            </div>
+        </div>
+    </div>
+
+    <div class="col-sm-6 col-xs-12">
+        <div class="box-info full">
+            <div class="img-wrap" id="avatar-picture-preview-panel"class="media-object img-circle">
+                <img id="avatar-picture-preview" src=""   />                
+            </div>
+            <div class="des-thumbnail">
+                <h4>Pré-Visualização</h4>
+                
+            </div>
+        </div>
+    </div>
+
+
+</div>
+
+<fieldset>
+    <legend>Padrões
+    </legend>
+
+    <div class="row" style="text-align: center">
+        <div class="col-sm-2 col-xs-4">
+            <img src="~/Content/Laceng/assets/img/avatar/1.jpg" class="media-object img-circle" />
+            <button type="button" class="btn btn-default btn-xs" data-dismiss="modal">Escolher</button>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+            <img src="~/Content/Laceng/assets/img/avatar/2.jpg" class="media-object img-circle" />
+            <button type="button" class="btn btn-default  btn-xs" data-dismiss="modal">Escolher</button>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+            <img src="~/Content/Laceng/assets/img/avatar/3.jpg" class="media-object img-circle" />
+            <button type="button" class="btn btn-default  btn-xs" data-dismiss="modal">Escolher</button>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+            <img src="~/Content/Laceng/assets/img/avatar/4.jpg" class="media-object img-circle" />
+            <button type="button" class="btn btn-default  btn-xs" data-dismiss="modal">Escolher</button>
+        </div>
+        <div class="col-sm-2 col-xs-4">
+            <img src="~/Content/Laceng/assets/img/avatar/5.jpg" class="media-object img-circle" />
+            <button type="button" class="btn btn-default  btn-xs" data-dismiss="modal">Escolher</button>
+        </div>
+    </div>
+</fieldset>
+<hr />
+<div id="pnlUpload" class="row pull-right">
+    <input id="fuFileUploader" name="file_upload" type="file" value="aqui" />
+</div>
+
+
+<style type="text/css">
+    #avatar-picture-preview-panel {
+        width: 150px;
+        height: 150px;
+        overflow: hidden;
+        margin-left: 5px;
+    }
+
+</style>

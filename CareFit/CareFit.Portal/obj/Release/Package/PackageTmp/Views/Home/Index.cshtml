@@ -1,0 +1,79 @@
+﻿@model CareFit.Portal.Models.Menu.IndexVM
+
+@{
+    ViewBag.Title = "CareFit - Bom Treino";
+    Layout = "~/Views/shared/_Layout.cshtml";
+}
+
+<link href="/Content/css/Home/index.css" rel="stylesheet" />
+<link href="/Content/Componentes/FullCalendar/fullcalendar.css" rel="stylesheet" />
+<script src="/Content/Componentes/FullCalendar/fullcalendar.min.js"></script>
+<script src="/Content/Componentes/FullCalendar/gcal.js"></script>
+<script src="/Content/js/Home/index.js"></script>
+
+<div class="page-heading animated fadeInDownBig">
+    <h1>CareFit
+        <small>@Model.LoggedUser.Nome  @Model.LoggedUser.Sobrenome</small>
+    </h1>
+</div>
+
+
+<div class="row">
+    <div class="col-sm-12">
+        @{
+            Html.RenderAction("TopItens", "Home");
+        }
+    </div>
+    <div class="col-sm-4">
+        @{
+            Html.RenderAction("timeline", "Post");   
+        }
+    </div>
+    <div class="col-sm-8">
+        <div class="col-sm-12">
+            <div class="box-info">
+                <h2><strong>Ultimos</strong> Treinamentos</h2>
+                <div class="panel-body">
+                    <div class="table-responsive">
+                        <table data-sortable="" class="table" data-sortable-initialized="true" id="table-list-people">
+                            <thead>
+                                <tr>
+                                    <th data-sorted="true">Treino</th>
+                                    <th data-sorted="true">Cor</th>
+                                    <th data-sorted="true">Inicio</th>
+                                    <th data-sorted="true">Termino</th>
+                                    <th data-sorted="true">Visualizar</th>
+
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var trainning in Model.PepleTrainnings)
+                                {
+                                    <tr>
+                                        <td>@trainning.Treinos.Titulo</td>
+                                        <td><span style="background-color:#@trainning.Treinos.Cor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span></td>
+                                        <td>@trainning.Inicio.ToString("dd/MM/yyyy")</td>
+                                        <td>@(trainning.Termino.HasValue ? trainning.Termino.Value.ToString("dd/MM/yyyy") : "")</td>
+                                        <td>
+                                            <button type="button" class="btn btn-default" people-trainning-id="@trainning.ID" title="Visualizar Treino" id="view-trainning-button-@trainning.Treinos.ID">
+                                                <span class="fa fa-eye"></span>
+                                            </button>
+                                        </td>
+                                    </tr>    
+                                }
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12">
+            <div class="box-info">
+                <h2><strong>Calendario</strong> de Treinamento</h2>
+                <div id="trainningCalendar">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

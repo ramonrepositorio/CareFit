@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="6b40f92e3560410cb28fe559098fccc8" Name="Diagram1">
+        <EntityTypeShape EntityType="CareFitModel.Empresas" Width="1.5" PointX="10.36042720189338" PointY="18.698584654693764" />
+        <EntityTypeShape EntityType="CareFitModel.Equipamentos" Width="1.5" PointX="10.497184400678233" PointY="7.9330074228034393" />
+        <EntityTypeShape EntityType="CareFitModel.EquipamentoTipos" Width="1.5" PointX="10.189810271463269" PointY="28.007726801562928" />
+        <EntityTypeShape EntityType="CareFitModel.ExercicioEquipamentos" Width="1.5" PointX="4.695846941646117" PointY="18.590161630227307" />
+        <EntityTypeShape EntityType="CareFitModel.Exercicios" Width="1.5" PointX="8.7813182290556462" PointY="6.7238936604577555" />
+        <EntityTypeShape EntityType="CareFitModel.ExercicioTipos" Width="1.5" PointX="2.6339148202137626" PointY="19.688169399131169" />
+        <EntityTypeShape EntityType="CareFitModel.GrupoMuscular" Width="1.5" PointX="2.2867696389028662" PointY="29.21432377268296" />
+        <EntityTypeShape EntityType="CareFitModel.Imagens" Width="1.5" PointX="5.0237968773691906" PointY="22.101482878486387" />
+        <EntityTypeShape EntityType="CareFitModel.Menus" Width="1.5" PointX="7.6772810722129794" PointY="22.628547813104721" />
+        <EntityTypeShape EntityType="CareFitModel.Permissoes" Width="1.5" PointX="2.2632567017633729" PointY="0.55033975865242057" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaAmigos" Width="1.5" PointX="3.572345882455048" PointY="25.151170027047009" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaEmpresas" Width="1.5" PointX="1.9732154430696811" PointY="23.518085103257597" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaMensagens" Width="1.5" PointX="6.2535618554118839" PointY="9.5983118310562858" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaPosts" Width="1.5" PointX="8.02341877111393" PointY="2.8797137154637436" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaPostTipos" Width="1.5" PointX="4.9003989458551622" PointY="23.064175065171057" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaProfessor" Width="1.5" PointX="0.36130764724747633" PointY="27.194037241485919" />
+        <EntityTypeShape EntityType="CareFitModel.Pessoas" Width="1.5" PointX="9.8924065837135569" PointY="2.3639593433420916" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaSolicitacaoAmizades" Width="1.5" PointX="5.4855961564395557" PointY="16.42644827832768" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaSolicitacaoEmpresa" Width="1.5" PointX="3.9001606013160948" PointY="14.28769170413152" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaSolicitacaoTipo" Width="1.5" PointX="4.9593308386203514" PointY="23.553757931829317" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaSolicitacoes" Width="1.5" PointX="2.0788298929477249" PointY="20.666382724729544" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaTipoPermissoes" Width="1.5" PointX="10.202384612617262" PointY="30.9065711046134" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaTipos" Width="1.5" PointX="2.947841407241226" PointY="0.12261825805651874" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaToken" Width="1.5" PointX="9.4096343467988248" PointY="12.613201400550642" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaTreino" Width="1.5" PointX="11.890500146844657" PointY="19.5780186148258" />
+        <EntityTypeShape EntityType="CareFitModel.PessoaTreinoEfetuado" Width="1.5" PointX="4.4113458806701686" PointY="7.2608928416207865" />
+        <EntityTypeShape EntityType="CareFitModel.Salas" Width="1.5" PointX="7.0332936397908687" PointY="14.16944964889877" />
+        <EntityTypeShape EntityType="CareFitModel.sysdiagrams" Width="1.5" PointX="7.2420897480296391" PointY="2.4766358446686696" />
+        <EntityTypeShape EntityType="CareFitModel.TreinoEmpresa" Width="1.5" PointX="5.03875380244048" PointY="4.4744066318843547" />
+        <EntityTypeShape EntityType="CareFitModel.TreinoExercicios" Width="1.5" PointX="8.7213159281394059" PointY="17.574515559512431" />
+        <EntityTypeShape EntityType="CareFitModel.TreinoProfessor" Width="1.5" PointX="2.479478779472168" PointY="9.6425447955925687" />
+        <EntityTypeShape EntityType="CareFitModel.Treinos" Width="1.5" PointX="2.070911665480077" PointY="0.35267354564400089" />
+        <EntityTypeShape EntityType="CareFitModel.TreinoTipos" Width="1.5" PointX="2.1601524754241819" PointY="11.829735612417448" />
+        <AssociationConnector Association="CareFitModel.FK_Empresas_Imagens" />
+        <AssociationConnector Association="CareFitModel.FK_Equipamentos_Empresas" />
+        <AssociationConnector Association="CareFitModel.FK_Exercicio_Empresas" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaEmpresas_Empresas" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaSolicitacaoEmpresa_Empresas" />
+        <AssociationConnector Association="CareFitModel.FK_Salas_Empresas" />
+        <AssociationConnector Association="CareFitModel.FK_TreinoEmpresa_Empresas" />
+        <AssociationConnector Association="CareFitModel.FK_Equipamentos_EquipamentoTipos" />
+        <AssociationConnector Association="CareFitModel.FK_Equipamentos_Salas" />
+        <AssociationConnector Association="CareFitModel.FK_ExercicioEquipamentos_Equipamentos" />
+        <AssociationConnector Association="CareFitModel.FK_Exercicios_Equipamentos" />
+        <AssociationConnector Association="CareFitModel.FK_ExercicioEquipamentos_Exercicios" />
+        <AssociationConnector Association="CareFitModel.FK_Exercicio_ExercicioTipo" />
+        <AssociationConnector Association="CareFitModel.FK_Exercicios_GrupoMuscular" />
+        <AssociationConnector Association="CareFitModel.FK_TreinoExercicios_Exercicios" />
+        <AssociationConnector Association="CareFitModel.FK_Pessoas_Imagens" />
+        <AssociationConnector Association="CareFitModel.FK_Menus_Menus" />
+        <AssociationConnector Association="CareFitModel.FK_Menus_Permissoes" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaTipoPermissoes_Permissoes1" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaAmigos_Pessoas" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaAmigos_Pessoas1" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaEmpresas_Pessoas" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaEmpresas_PessoaTipos" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaMensagens_Pessoas" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaMensagens_Pessoas1" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaPosts_PessoaPostTipos" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaPosts_Pessoas" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaProfessor_Pessoas" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaProfessor_Pessoas1" />
+        <AssociationConnector Association="CareFitModel.FK_Pessoas_Pessoas" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaSolicitacaoAmizades_Pessoas" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaSolicitacoes_Pessoas" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaToken_Pessoas" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaTreino_Pessoas" />
+        <AssociationConnector Association="CareFitModel.FK_TreinoProfessor_Pessoas" />
+        <AssociationConnector Association="CareFitModel.FK_Treinos_Pessoas1" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaSolicitacaoAmizades_PessoaSolicitacoes" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaSolicitacaoEmpresa_PessoaSolicitacoes" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaSolicitacoes_PessoaSolicitacaoTipo" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaTipoPermissoes_PessoaTipos1" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaTreino_Treinos" />
+        <AssociationConnector Association="CareFitModel.FK_PessoaTreinoEfetuado_PessoaTreino" />
+        <AssociationConnector Association="CareFitModel.FK_TreinoEmpresa_Treinos" />
+        <AssociationConnector Association="CareFitModel.FK_TreinoExercicios_Treinos" />
+        <AssociationConnector Association="CareFitModel.FK_TreinoProfessor_Treinos" />
+        <AssociationConnector Association="CareFitModel.FK_Treinos_TreinoTipos" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

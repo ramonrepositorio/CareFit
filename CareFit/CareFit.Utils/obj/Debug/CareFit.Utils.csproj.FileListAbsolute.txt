@@ -1,0 +1,9 @@
+D:\CareFit\Workspace\CareFit\CareFit.Utils\bin\Debug\CareFit.Utils.dll
+D:\CareFit\Workspace\CareFit\CareFit.Utils\bin\Debug\CareFit.Utils.pdb
+D:\CareFit\Workspace\CareFit\CareFit.Utils\obj\Debug\CareFit.Utils.dll
+D:\CareFit\Workspace\CareFit\CareFit.Utils\obj\Debug\CareFit.Utils.pdb
+D:\Ramon\CareFit\Workspace\CareFit\CareFit.Utils\bin\Debug\CareFit.Utils.dll
+D:\Ramon\CareFit\Workspace\CareFit\CareFit.Utils\bin\Debug\CareFit.Utils.pdb
+D:\Ramon\CareFit\Workspace\CareFit\CareFit.Utils\obj\Debug\CareFit.Utils.csprojResolveAssemblyReference.cache
+D:\Ramon\CareFit\Workspace\CareFit\CareFit.Utils\obj\Debug\CareFit.Utils.dll
+D:\Ramon\CareFit\Workspace\CareFit\CareFit.Utils\obj\Debug\CareFit.Utils.pdb

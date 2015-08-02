@@ -1,0 +1,24 @@
+﻿#check-trainning-dialog {
+    display:none;
+}
+#footer-view-trainning {
+    display:none;
+}
+fieldset {
+    margin-top:5px !important;
+}
+#trainning-print-buttons-panel {
+    text-align:center;
+}
+@media print {
+    #trainning-print-buttons-panel {
+        display:none;
+    }
+    h1, h2, h3, h4, h5, h6, h7, h8, h9 {
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    legend {
+        margin-bottom:5px;
+    }
+}

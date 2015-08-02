@@ -1,0 +1,47 @@
+﻿@model CareFit.Portal.Models.Trainig.ListDefaultTrainningsVM
+
+<script src="~/Content/js/Trainig/listDefaultTrainnings.js"></script>
+<div class="table-responsive" id="people-list-content">
+    <input type="hidden" id="default-trainning-people-id" value="@Model.PeopleId" />
+    <table data-sortable="" class="table" data-sortable-initialized="true" id="table-list-people">
+        <thead>
+            <tr>
+                <th data-sorted="true">Treino</th>
+                <th data-sorted="true">Repouso</th>
+                <th data-sorted="true">Repetições</th>
+                <th data-sorted="true">Cor</th>
+                <th data-sorted="true">Tipo</th>
+                <th data-sorted="true"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var trainning in Model.Trainnings)
+            {
+                <tr>
+                    <td>@trainning.Titulo</td>
+                    <td>@trainning.RepousoMinimo [Hrs]</td>
+                    <td>@trainning.Repeticoes</td>
+                    <td>
+                        <span style="background-color:#@trainning.Cor">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>
+                    </td>
+                    <td>@trainning.TreinoTipos.Descricao</td>
+                    <td>
+                        @if (Model.PeopleId.HasValue)
+                        {
+                            <button type="button" class="btn btn-default" trainning-id="@trainning.ID" title="Utilizar traino padrão @trainning.Titulo " id="choose-default-trainning-button-@trainning.ID">
+                                <span class="glyphicon glyphicon-check"></span>
+                            </button>
+                        }
+                        else
+                        {
+                            <button type="button" class="btn btn-default" trainning-id="@trainning.ID" title="Alterar traino padrão @trainning.Titulo " id="edit-default-trainning-button-@trainning.ID">
+                                <span class="glyphicon glyphicon-edit"></span>
+                            </button>
+                        }
+                    </td>
+                </tr>    
+            }
+        </tbody>
+    </table>
+</div>
